@@ -1,40 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Antics of a hearing researcher</title>
-    <description>Antics of a scientist </description>
-    <link>https://crisly.github.io/</link>
-    <atom:link href="https://crisly.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 May 2015 13:34:39 +0200</pubDate>
-    <lastBuildDate>Fri, 22 May 2015 13:34:39 +0200</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <title></title>
+    <description>»Crisly&#39;s antics« is my personal webspace. About neuroscience, tinnitus and photos.</description>
+    <link>https://crisly.github.io//</link>
+    <atom:link href="https://crisly.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Joy Division</title>
+        <description>&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/w2mKRjPHUNg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Sat, 25 Jul 2015 00:00:00 +0200</pubDate>
+        <link>https://crisly.github.io//music/decades/</link>
+        <guid isPermaLink="true">https://crisly.github.io//music/decades/</guid>
+      </item>
+    
+      <item>
+        <title>The Strange Case of Dr. Jekyll and Mr. Hyde,</title>
+        <description>&lt;p&gt;A few weeks ago, I stumbled over Jekyll, a ruby implementation that is geared towards producing ‘responsive’ static websites. The idea of having plain-text posts, that get subsequently rendered into nice, clean, fast HTML sites, is really appealing. Why? Have a look at a generic CMS such as WordPress or Joomla. It may have a nice interface allowing you to type posts, add some images and links and saving them online that make it sort-of easy-to-use. The back-end of these sites however is often database-driven (MySQL) and allows for more than any user (/webdeveloper) might ever want. Too amny options and difficult template-adjusting-tinkering-sessions as a consequence. In my opinion, a website should be clean, concise, simple and mostly text-, image- or link-based. When I occasionally write a post, it’s about music, movies, photos or science (perhaps even sharing code). A resume is a must, as well as  a means of showcasing photo’s or projects. I don’t need a big forum, facebook-likeble posts and other what-have-you-nots. The cleaner, the better. Perhaps a good time to introduce Jekyll.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;Jekyll is made with responsiveness in mind. Easy scaling between small-phone-size-screens to huge-desktop-screens. The posts are simple plain-text files that get compiled and type-set into a static site, ready to be deployed anywhere.&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;This website is my first attemt to get a fresh new start.  Occasionally things may be broken but the steep-learning curve (in combination with excellent examples of themes, such as [https://phlow.github.io/feeling-responsive]) already got me here. Improvements will follow but until then, this seems like a good start. I like it anyway…&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 class=&quot;t60&quot; id=&quot;other-posts-about-music&quot;&gt;Other posts about music&lt;/h2&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+&lt;ul class=&quot;side-nav&quot;&gt;
+
+  
+
+    
+      &lt;li&gt;&lt;a href=&quot;https://crisly.github.io//music/black_sun/&quot;&gt;Tiny Desk Concerts &amp;middot; &lt;strong&gt;Death Cab for Cutie&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+    
+
+  
+&lt;/ul&gt;
 
 </description>
-        <pubDate>Fri, 22 May 2015 01:38:44 +0200</pubDate>
-        <link>https://crisly.github.io/jekyll/update/2015/05/22/welcome-to-jekyll/</link>
-        <guid isPermaLink="true">https://crisly.github.io/jekyll/update/2015/05/22/welcome-to-jekyll/</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
+        <pubDate>Fri, 24 Jul 2015 00:00:00 +0200</pubDate>
+        <link>https://crisly.github.io//general/myfirstjekyll/</link>
+        <guid isPermaLink="true">https://crisly.github.io//general/myfirstjekyll/</guid>
+      </item>
+    
+      <item>
+        <title>Death Cab for Cutie</title>
+        <description>&lt;iframe width=&quot;600&quot; height=&quot;338&quot; src=&quot;http://www.npr.org/templates/event/embeddedVideo.php?storyId=397696708&amp;amp;mediaId=397700321&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;A few haunting song by Death Cab for Cutie &lt;cite&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Death_Cab_for_Cutie&quot;&gt;Wikipedia&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 23 Jul 2015 00:00:00 +0200</pubDate>
+        <link>https://crisly.github.io//music/black_sun/</link>
+        <guid isPermaLink="true">https://crisly.github.io//music/black_sun/</guid>
+      </item>
+    
+      <item>
+        <title>NPR Tiny Desk Concerts</title>
+        <description>&lt;p&gt;This year marks the NPR Tiny Desk Concerts &lt;a href=&quot;http://www.npr.org/blogs/allsongs/2015/02/12/385532517/all-songs-at-15-our-first-ever-tiny-desk-concert&quot;&gt;15th birthday&lt;/a&gt;. A desk transformed into a stage for the most intimate concerts you’ll ever witness (maybe a bit exaggerated, but you get the gist). Here’s a few I’ve been enjoying lately:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Death Cab for Cutie&lt;/strong&gt;
+Especially the first song, ‘Black Sun’ keeps haunting me.&lt;/p&gt;
+
+&lt;p&gt;“What Sarah Said” also features in a spotify-list with mainly sad song (which eventually might share).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Moon Hooch&lt;/strong&gt;
+Two screeming saxophones and one drummer that keeps the beat up. What can I say - just listen!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tallest Man on Earth&lt;/strong&gt;
+With his raw voice not very unlike Bob Dylan his songs might also hit your ‘sad string’ although it’s happy-go-lucky at times.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Swell Season&lt;/strong&gt;
+Following their musical love-story &lt;a href=&quot;http://en.wikipedia.org/wiki/Once_%28film%29&quot;&gt;“Once”&lt;/a&gt; a intimate desk concert by Glen Hansard and Marketa Irglova.&lt;/p&gt;
+
+&lt;p&gt;See the full list of concerts here (apparently over 400 of them!) 
+&lt;a href=&quot;http://www.npr.org/series/tiny-desk-concerts/&quot;&gt;http://www.npr.org/series/tiny-desk-concerts/&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 21 Apr 2015 00:00:00 +0200</pubDate>
+        <link>https://crisly.github.io//music/tiny-desk-concerts/</link>
+        <guid isPermaLink="true">https://crisly.github.io//music/tiny-desk-concerts/</guid>
+      </item>
+    
+      <item>
+        <title>Python notebook - interactive science</title>
+        <description>&lt;p&gt;In a previous post I showed that python, in combination with some additions such as numpy and matplotlib, can be a considered a worthy replacement of Matlab. There are some tricks that make the transition even easier. One of those additions is the browser ‘notebook’, an interactive Python interface running in the browser. Even if for some reason you don’t fancy browser-based python, the technology allows for more than just that. One of those new features (v0.12) is the inline graphics mode that is quite similar to Mathematica’s approach. In order to get this running I’ll just copy the steps (as previously described &lt;a href=&quot;http://raj.blog.archive.org/2012/02/02/installing-ipython-notebook-to-replace-matlab/&quot;&gt;here&lt;/a&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tcl&quot; data-lang=&quot;tcl&quot;&gt;&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; add-apt-repository ppa:chris-lea&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;zeromq
+&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; add-apt-repository ppa:chris-lea&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;libpgm
+&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; apt-get update
+&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; apt-get install libzmq1
+&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; apt-get install libzmq-dev
+&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; apt-get install libpgm-5.1-0
+&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; pip install pyzmq 
+sudo pip install tornado
+&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; pip install &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;upgrade ipython
+&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; pip install numpy
+&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; pip install matplotlib&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;That should get you the latest iPython. To get the inline graphics mode running, just type&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tcl&quot; data-lang=&quot;tcl&quot;&gt;&lt;span class=&quot;nv&quot;&gt;ipython&lt;/span&gt; qtconsole &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;pylab&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;inline&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The same example as previously but now with the inline graphics mode:
+&lt;img src=&quot;http://www.crisly.nl/docs/ipython_inline.png&quot; alt=&quot;ipython inline graphics&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 19 May 2012 00:00:00 +0200</pubDate>
+        <link>https://crisly.github.io//general/interactive-pythonnumpymatplotlib/</link>
+        <guid isPermaLink="true">https://crisly.github.io//general/interactive-pythonnumpymatplotlib/</guid>
       </item>
     
   </channel>
