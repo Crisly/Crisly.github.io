@@ -3,25 +3,25 @@
   <channel>
     <title></title>
     <description>»Crisly&#39;s antics« is my personal webspace. About neuroscience, tinnitus and photos.</description>
-    <link>https://crisly.github.io//</link>
-    <atom:link href="https://crisly.github.io//feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://crisly.github.io/</link>
+    <atom:link href="https://crisly.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Joy Division</title>
         <description>&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/w2mKRjPHUNg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Sat, 25 Jul 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io//music/decades/</link>
-        <guid isPermaLink="true">https://crisly.github.io//music/decades/</guid>
+        <link>https://crisly.github.io/music/decades/</link>
+        <guid isPermaLink="true">https://crisly.github.io/music/decades/</guid>
       </item>
     
       <item>
         <title>The Strange Case of Dr. Jekyll and Mr. Hyde,</title>
-        <description>&lt;p&gt;A few weeks ago, I stumbled over Jekyll, a ruby implementation that is geared towards producing ‘responsive’ static websites. The idea of having plain-text posts, that get subsequently rendered into nice, clean, fast HTML sites, is really appealing. Why? Have a look at a generic CMS such as WordPress or Joomla. It may have a nice interface allowing you to type posts, add some images and links and saving them online that make it sort-of easy-to-use. The back-end of these sites however is often database-driven (MySQL) and allows for more than any user (/webdeveloper) might ever want. Too amny options and difficult template-adjusting-tinkering-sessions as a consequence. In my opinion, a website should be clean, concise, simple and mostly text-, image- or link-based. When I occasionally write a post, it’s about music, movies, photos or science (perhaps even sharing code). A resume is a must, as well as  a means of showcasing photo’s or projects. I don’t need a big forum, facebook-likeble posts and other what-have-you-nots. The cleaner, the better. Perhaps a good time to introduce Jekyll.&lt;/p&gt;
+        <description>&lt;p&gt;A few weeks ago, I stumbled over Jekyll, a ruby implementation that is geared towards producing ‘responsive’ static websites. The idea of having plain-text posts, that get subsequently rendered into nice, clean, fast HTML sites, is really appealing. Why? Have a look at a generic CMS such as WordPress or Joomla. It may have a nice interface allowing you to type posts, add some images and links and saving them online that make it sort-of easy-to-use. The back-end of these sites however is often database-driven (MySQL) and allows for more than any user (/web developer) might ever want. Too many options and difficult template-adjusting-tinkering-sessions as a consequence. In my opinion, a website should be clean, concise, simple and mostly text-, image- or link-based. When I occasionally write a post, it’s about music, movies, photos or science (perhaps even sharing code). A resume is a must, as well as  a means of showcasing photo’s or projects. I don’t need a big forum, facebook-likeble posts and other what-have-you-nots. The cleaner, the better. Perhaps a good time to introduce Jekyll.&lt;/p&gt;
 
 &lt;p&gt;Jekyll is made with responsiveness in mind. Easy scaling between small-phone-size-screens to huge-desktop-screens. The posts are simple plain-text files that get compiled and type-set into a static site, ready to be deployed anywhere.&lt;/p&gt;
 
-&lt;p&gt;This website is my first attemt to get a fresh new start.  Occasionally things may be broken but the steep-learning curve (in combination with excellent examples of themes, such as [https://phlow.github.io/feeling-responsive]) already got me here. Improvements will follow but until then, this seems like a good start. I like it anyway…&lt;/p&gt;
+&lt;p&gt;This website is my first attempt to get a fresh new start.  Occasionally things may be broken but the steep-learning curve (in combination with excellent examples of themes, such as [https://phlow.github.io/feeling-responsive]) already got me here. Improvements will follow but until then, this seems like a good start. I like it anyway…&lt;/p&gt;
 
 &lt;h2 class=&quot;t60&quot; id=&quot;other-posts-about-music&quot;&gt;Other posts about music&lt;/h2&gt;
 
@@ -30,7 +30,7 @@
   
 
     
-      &lt;li&gt;&lt;a href=&quot;https://crisly.github.io//music/black_sun/&quot;&gt;Tiny Desk Concerts &amp;middot; &lt;strong&gt;Death Cab for Cutie&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://crisly.github.io/music/black_sun/&quot;&gt;Tiny Desk Concerts &amp;middot; &lt;strong&gt;Death Cab for Cutie&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
     
 
   
@@ -38,8 +38,8 @@
 
 </description>
         <pubDate>Fri, 24 Jul 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io//general/myfirstjekyll/</link>
-        <guid isPermaLink="true">https://crisly.github.io//general/myfirstjekyll/</guid>
+        <link>https://crisly.github.io/general/myfirstjekyll/</link>
+        <guid isPermaLink="true">https://crisly.github.io/general/myfirstjekyll/</guid>
       </item>
     
       <item>
@@ -50,8 +50,8 @@
 
 </description>
         <pubDate>Thu, 23 Jul 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io//music/black_sun/</link>
-        <guid isPermaLink="true">https://crisly.github.io//music/black_sun/</guid>
+        <link>https://crisly.github.io/music/black_sun/</link>
+        <guid isPermaLink="true">https://crisly.github.io/music/black_sun/</guid>
       </item>
     
       <item>
@@ -76,36 +76,36 @@ Following their musical love-story &lt;a href=&quot;http://en.wikipedia.org/wiki
 &lt;a href=&quot;http://www.npr.org/series/tiny-desk-concerts/&quot;&gt;http://www.npr.org/series/tiny-desk-concerts/&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 21 Apr 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io//music/tiny-desk-concerts/</link>
-        <guid isPermaLink="true">https://crisly.github.io//music/tiny-desk-concerts/</guid>
+        <link>https://crisly.github.io/music/tiny-desk-concerts/</link>
+        <guid isPermaLink="true">https://crisly.github.io/music/tiny-desk-concerts/</guid>
       </item>
     
       <item>
         <title>Python notebook - interactive science</title>
-        <description>&lt;p&gt;In a previous post I showed that python, in combination with some additions such as numpy and matplotlib, can be a considered a worthy replacement of Matlab. There are some tricks that make the transition even easier. One of those additions is the browser ‘notebook’, an interactive Python interface running in the browser. Even if for some reason you don’t fancy browser-based python, the technology allows for more than just that. One of those new features (v0.12) is the inline graphics mode that is quite similar to Mathematica’s approach. In order to get this running I’ll just copy the steps (as previously described &lt;a href=&quot;http://raj.blog.archive.org/2012/02/02/installing-ipython-notebook-to-replace-matlab/&quot;&gt;here&lt;/a&gt;:&lt;/p&gt;
+        <description>&lt;p&gt;In a previous post I showed that python, in combination with some additions such as &lt;strong&gt;numpy&lt;/strong&gt; and &lt;strong&gt;matplotlib&lt;/strong&gt;, can be a considered a worthy replacement of Matlab. There are some tricks that make the transition even easier. One of those additions is the browser ‘notebook’, an interactive Python interface running in the browser. Even if for some reason you don’t fancy browser-based python, the technology allows for more than just that. One of those new features (v0.12) is the inline graphics mode that is quite similar to Mathematica’s approach. In order to get this running I’ll just copy the steps (as previously described &lt;a href=&quot;http://raj.blog.archive.org/2012/02/02/installing-ipython-notebook-to-replace-matlab/&quot;&gt;here&lt;/a&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tcl&quot; data-lang=&quot;tcl&quot;&gt;&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; add-apt-repository ppa:chris-lea&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;zeromq
-&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; add-apt-repository ppa:chris-lea&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;libpgm
-&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; apt-get update
-&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; apt-get install libzmq1
-&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; apt-get install libzmq-dev
-&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; apt-get install libpgm-5.1-0
-&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; pip install pyzmq 
-sudo pip install tornado
-&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; pip install &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;upgrade ipython
-&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; pip install numpy
-&lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; pip install matplotlib&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tcl&quot; data-lang=&quot;tcl&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; add-apt-repository ppa:chris-lea&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;zeromq
+&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; add-apt-repository ppa:chris-lea&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;libpgm
+&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; apt-get update
+&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; apt-get install libzmq1
+&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; apt-get install libzmq-dev
+&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; apt-get install libpgm-5.1-0
+&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; pip install pyzmq 
+&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt; sudo pip install tornado
+&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; pip install &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;upgrade ipython
+&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; pip install numpy
+&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sudo&lt;/span&gt; pip install matplotlib&lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;That should get you the latest iPython. To get the inline graphics mode running, just type&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tcl&quot; data-lang=&quot;tcl&quot;&gt;&lt;span class=&quot;nv&quot;&gt;ipython&lt;/span&gt; qtconsole &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;pylab&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;inline&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;alert-box terminal radius&quot;&gt;ipython qtconsole --pylab=inline&lt;/div&gt;
 
 &lt;p&gt;The same example as previously but now with the inline graphics mode:
-&lt;img src=&quot;http://www.crisly.nl/docs/ipython_inline.png&quot; alt=&quot;ipython inline graphics&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://crisly.github.io/docs/ipython_inline.png&quot; alt=&quot;ipython inline graphics&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 19 May 2012 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io//general/interactive-pythonnumpymatplotlib/</link>
-        <guid isPermaLink="true">https://crisly.github.io//general/interactive-pythonnumpymatplotlib/</guid>
+        <link>https://crisly.github.io/general/interactive-pythonnumpymatplotlib/</link>
+        <guid isPermaLink="true">https://crisly.github.io/general/interactive-pythonnumpymatplotlib/</guid>
       </item>
     
   </channel>

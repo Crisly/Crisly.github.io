@@ -3,7 +3,7 @@
   
     
     <url>
-      <loc>https://crisly.github.io//music/decades/</loc>
+      <loc>https://crisly.github.io/music/decades/</loc>
       
         <lastmod>2015-07-25T00:00:00+02:00</lastmod>
       
@@ -18,7 +18,7 @@
   
     
     <url>
-      <loc>https://crisly.github.io//general/myfirstjekyll/</loc>
+      <loc>https://crisly.github.io/general/myfirstjekyll/</loc>
       
         <lastmod>2015-07-24T00:00:00+02:00</lastmod>
       
@@ -33,7 +33,7 @@
   
     
     <url>
-      <loc>https://crisly.github.io//music/black_sun/</loc>
+      <loc>https://crisly.github.io/music/black_sun/</loc>
       
         <lastmod>2015-07-23T00:00:00+02:00</lastmod>
       
@@ -48,7 +48,7 @@
   
     
     <url>
-      <loc>https://crisly.github.io//music/tiny-desk-concerts/</loc>
+      <loc>https://crisly.github.io/music/tiny-desk-concerts/</loc>
       
         <lastmod>2015-04-21T00:00:00+02:00</lastmod>
       
@@ -63,7 +63,7 @@
   
     
     <url>
-      <loc>https://crisly.github.io//general/interactive-pythonnumpymatplotlib/</loc>
+      <loc>https://crisly.github.io/general/interactive-pythonnumpymatplotlib/</loc>
       
         <lastmod>2012-05-19T00:00:00+02:00</lastmod>
       
@@ -79,24 +79,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io//404.html</loc>
+      <loc>https://crisly.github.io/404.html</loc>
       
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://crisly.github.io//about/</loc>
-      
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -109,24 +94,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io//blog/archive/</loc>
+      <loc>https://crisly.github.io/about/</loc>
       
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://crisly.github.io//contact/</loc>
-      
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -139,24 +109,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io//feed.xml</loc>
+      <loc>https://crisly.github.io/blog/archive/</loc>
       
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://crisly.github.io//www.crisly.nl/general/</loc>
-      
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -169,24 +124,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io//blog/</loc>
+      <loc>https://crisly.github.io/contact/</loc>
       
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://crisly.github.io//</loc>
-      
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -199,24 +139,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io//music/</loc>
+      <loc>https://crisly.github.io/feed.xml</loc>
       
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://crisly.github.io//photos/</loc>
-      
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -229,24 +154,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io//redirect-page/</loc>
+      <loc>https://crisly.github.io/www.crisly.nl/general/</loc>
       
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://crisly.github.io//resume/</loc>
-      
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -259,24 +169,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io//robots.txt</loc>
+      <loc>https://crisly.github.io/blog/</loc>
       
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://crisly.github.io//search/</loc>
-      
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -289,9 +184,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io//sitemap.xml</loc>
+      <loc>https://crisly.github.io/</loc>
       
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -304,9 +199,114 @@
   
     
     <url>
-      <loc>https://crisly.github.io//assets/css/styles_feeling_responsive.css</loc>
+      <loc>https://crisly.github.io/music/</loc>
       
-        <lastmod>2015-07-27T10:29:28+02:00</lastmod>
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crisly.github.io/photos/</loc>
+      
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crisly.github.io/redirect-page/</loc>
+      
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crisly.github.io/resume/</loc>
+      
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crisly.github.io/robots.txt</loc>
+      
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crisly.github.io/search/</loc>
+      
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crisly.github.io/sitemap.xml</loc>
+      
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crisly.github.io/assets/css/styles_feeling_responsive.css</loc>
+      
+        <lastmod>2015-07-27T14:41:55+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
