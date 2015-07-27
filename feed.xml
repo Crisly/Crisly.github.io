@@ -7,15 +7,6 @@
     <atom:link href="https://crisly.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Joy Division</title>
-        <description>&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/w2mKRjPHUNg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-</description>
-        <pubDate>Sat, 25 Jul 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/music/decades/</link>
-        <guid isPermaLink="true">https://crisly.github.io/music/decades/</guid>
-      </item>
-    
-      <item>
         <title>The Strange Case of Dr. Jekyll and Mr. Hyde,</title>
         <description>&lt;p&gt;A few weeks ago, I stumbled over Jekyll, a ruby implementation that is geared towards producing ‘responsive’ static websites. The idea of having plain-text posts, which in turn get rendered into nice, clean, fast HTML sites, is really appealing. Why? Have a look at a generic CMS such as WordPress or Joomla. It may have a nice interface allowing you to type posts, add some images and links and saving them online that make it sort-of easy-to-use. The back-end of these sites however is often database-driven (MySQL) and allows for more than any user (/web developer) might ever want and, perhaps more importantly, slowing it down. Too many options and difficult template-adjusting-tinkering-sessions as a consequence.&lt;/p&gt;
 
@@ -37,9 +28,18 @@
 &lt;/ul&gt;
 
 </description>
-        <pubDate>Fri, 24 Jul 2015 00:00:00 +0200</pubDate>
+        <pubDate>Mon, 27 Jul 2015 00:00:00 +0200</pubDate>
         <link>https://crisly.github.io/general/myfirstjekyll/</link>
         <guid isPermaLink="true">https://crisly.github.io/general/myfirstjekyll/</guid>
+      </item>
+    
+      <item>
+        <title>Joy Division</title>
+        <description>&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/w2mKRjPHUNg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Sat, 25 Jul 2015 00:00:00 +0200</pubDate>
+        <link>https://crisly.github.io/music/decades/</link>
+        <guid isPermaLink="true">https://crisly.github.io/music/decades/</guid>
       </item>
     
       <item>
