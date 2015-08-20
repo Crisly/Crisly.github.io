@@ -3,7 +3,52 @@
   
     
     <url>
-      <loc>https://crisly.github.io/general/myfirstjekyll/</loc>
+      <loc>http://localhost:4000/python/stats/</loc>
+      
+        <lastmod>2015-08-20T00:00:00+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/python/python_data_analysis_and_visualisation/</loc>
+      
+        <lastmod>2015-08-19T00:00:00+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/animation/onebrightdot/</loc>
+      
+        <lastmod>2015-08-02T00:00:00+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/general/myfirstjekyll/</loc>
       
         <lastmod>2015-07-27T00:00:00+02:00</lastmod>
       
@@ -18,7 +63,7 @@
   
     
     <url>
-      <loc>https://crisly.github.io/music/decades/</loc>
+      <loc>http://localhost:4000/music/decades/</loc>
       
         <lastmod>2015-07-25T00:00:00+02:00</lastmod>
       
@@ -33,7 +78,7 @@
   
     
     <url>
-      <loc>https://crisly.github.io/music/black_sun/</loc>
+      <loc>http://localhost:4000/music/black_sun/</loc>
       
         <lastmod>2015-07-23T00:00:00+02:00</lastmod>
       
@@ -48,7 +93,7 @@
   
     
     <url>
-      <loc>https://crisly.github.io/music/tiny-desk-concerts/</loc>
+      <loc>http://localhost:4000/music/tiny-desk-concerts/</loc>
       
         <lastmod>2015-04-21T00:00:00+02:00</lastmod>
       
@@ -63,7 +108,7 @@
   
     
     <url>
-      <loc>https://crisly.github.io/general/interactive-pythonnumpymatplotlib/</loc>
+      <loc>http://localhost:4000/general/interactive-pythonnumpymatplotlib/</loc>
       
         <lastmod>2012-05-19T00:00:00+02:00</lastmod>
       
@@ -79,24 +124,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io/404.html</loc>
+      <loc>http://localhost:4000/404.html</loc>
       
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://crisly.github.io/about/</loc>
-      
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -109,24 +139,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io/blog/archive/</loc>
+      <loc>http://localhost:4000/about/</loc>
       
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://crisly.github.io/contact/</loc>
-      
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -139,24 +154,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io/feed.xml</loc>
+      <loc>http://localhost:4000/blog/archive/</loc>
       
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://crisly.github.io/general/</loc>
-      
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -169,24 +169,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io/blog/</loc>
+      <loc>http://localhost:4000/contact/</loc>
       
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://crisly.github.io/</loc>
-      
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -199,24 +184,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io/music/</loc>
+      <loc>http://localhost:4000/feed.xml</loc>
       
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://crisly.github.io/photos/</loc>
-      
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -229,24 +199,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io/redirect-page/</loc>
+      <loc>http://localhost:4000/general/</loc>
       
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://crisly.github.io/resume/</loc>
-      
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -259,24 +214,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io/robots.txt</loc>
+      <loc>http://localhost:4000/blog/</loc>
       
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://crisly.github.io/search/</loc>
-      
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -289,9 +229,9 @@
   
     
     <url>
-      <loc>https://crisly.github.io/sitemap.xml</loc>
+      <loc>http://localhost:4000/</loc>
       
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -304,9 +244,129 @@
   
     
     <url>
-      <loc>https://crisly.github.io/assets/css/styles_feeling_responsive.css</loc>
+      <loc>http://localhost:4000/music/</loc>
       
-        <lastmod>2015-07-28T15:03:24+02:00</lastmod>
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/photos/</loc>
+      
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/redirect-page/</loc>
+      
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/resume/</loc>
+      
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/robots.txt</loc>
+      
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/search/</loc>
+      
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/sitemap.xml</loc>
+      
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/assets/css/styles_feeling_responsive.css</loc>
+      
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/blog/page2/</loc>
+      
+        <lastmod>2015-08-20T20:17:13+02:00</lastmod>
       
       
         <changefreq>monthly</changefreq>

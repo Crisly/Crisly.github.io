@@ -2,9 +2,617 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <description>»Crisly&#39;s antics« is my personal webspace. About neuroscience, tinnitus and photos.</description>
-    <link>https://crisly.github.io/</link>
-    <atom:link href="https://crisly.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <description>»Crisly&#39;s antics« is my personal webspace. About neuroscience, tinnitus,  photos and more.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Python data analysis &amp; visualisation</title>
+        <description>&lt;p&gt;&lt;strong&gt;In [109]:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os.path&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;op&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;glob&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;plt&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pd&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;seaborn&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sns&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;statsmodels.api&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sm&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;statsmodels.formula.api&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ols&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# some, perhaps, relevant links:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# http://stats.stackexchange.com/questions/24314/when-is-a-repeated-measures-anova-preferred-over-a-mixed-effects-model&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# http://nbviewer.ipython.org/urls/umich.box.com/shared/static/6tfc1e0q6jincsv5pgfa.ipynb&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# http://jpktd.blogspot.jp/2013/03/multiple-comparison-and-tukey-hsd-or_25.html&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# http://statsmodels.sourceforge.net/devel/anova.html&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;resdir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/cplanting/ABR-vis/&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data_bera&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;op&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;amp.csv&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data_bera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#g0 = sns.factorplot(&amp;quot;intensity&amp;quot;,&amp;quot;amplitude&amp;quot;,&amp;quot;stimulus_type&amp;quot;,kind=&amp;quot;auto&amp;quot;,&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#                    ci=90,n_boot=5000, estimator=np.mean, &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#                    data=data_bera, size=6, palette=&amp;quot;muted&amp;quot;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#g1 = sns.factorplot(&amp;quot;intensity&amp;quot;,&amp;quot;amplitude&amp;quot;,&amp;quot;ear&amp;quot;,kind=&amp;quot;auto&amp;quot;,&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#                    ci=90,n_boot=5000, estimator=np.mean, &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#                    data=data_bera, size=6, palette=&amp;quot;muted&amp;quot;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#g2 = sns.factorplot(&amp;quot;stimulus_type&amp;quot;,&amp;quot;amplitude&amp;quot;,&amp;quot;stimulus_type&amp;quot;,kind=&amp;quot;auto&amp;quot;,&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#                    ci=90,n_boot=5000, estimator=np.mean, &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#                    data=data_bera, size=6, palette=&amp;quot;muted&amp;quot;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#bin data: http://stackoverflow.com/questions/16947336/binning-a-dataframe-in-pandas-in-python&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;85&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;int_binned&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data_bera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cut&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data_bera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intensity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#print data_bera.head()&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#print int_binned.head()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;int_round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mult&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#round to closest multiple of 10; 5.0 -&amp;gt; 0.0; 5.1 -&amp;gt; 10.0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mult&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mult&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;data_bera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;intensity (dB SPL)&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int_round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data_bera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;intensity&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;10.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data_bera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data_bera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intensity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;85&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;g0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;factorplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;intensity (dB SPL)&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;amplitude&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;stimulus_type&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;auto&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;68&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_boot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;estimator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+                    &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;palette&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;muted&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int_binned&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;   sub_id  intensity initials     ear stimulus_type  latency  amplitude
+0       1         80       JM  Rechts         Chirp     5.77        620
+1       1         80       JM  Rechts        Clicks     5.57        450
+2       1         80       JM   Links         Chirp     5.57        725
+3       1         80       JM   Links        Clicks     5.73        500
+4       1         70       JM  Rechts        Clicks     5.93        475
+             sub_id  intensity   latency   amplitude  intensity (dB SPL)
+intensity                                                               
+(5, 15]    7.000000  10.312500  9.108125  227.500000           10.625000
+(15, 25]   8.333333  20.138889  8.243056  331.944444           20.000000
+(25, 35]   7.846154  30.384615  7.881282  395.512821           30.769231
+(35, 45]   7.666667  40.294118  7.636863  465.588235           40.000000
+(45, 55]   8.535714  50.178571  7.559643  360.357143           50.357143
+(55, 65]   8.020833  60.000000  6.584792  554.375000           60.000000
+(65, 75]   8.230769  70.000000  6.545385  535.192308           70.000000
+(75, 85]   7.325581  80.000000  5.897209  658.139535           80.000000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;notebooks/stats_bera_files/stats_bera_0_1.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;In [110]:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#amp_mean = data_bera.groupby([&amp;#39;intensity&amp;#39;, &amp;#39;stimulus_type&amp;#39;]).aggregate(np.mean)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#print amp_mean&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;stimulus_type&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#print group&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;group_agg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;intensity (dB SPL)&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aggregate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;group_agg_err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;intensity (dB SPL)&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aggregate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;group_agg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;latency&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yerr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;group_agg_err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#error bars do not appear yet...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;notebooks/stats_bera_files/stats_bera_1_0.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;In [111]:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;stimulus_type&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;intensity (dB SPL)&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;amplitude&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#df = tmp.groupby([&amp;#39;intensity (dB SPL)&amp;#39;,&amp;#39;stimulus_type&amp;#39;])[&amp;#39;latency&amp;#39;]&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#df.mean()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;means&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#take standard error of the mean instead of standard deviation.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;means&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;fig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subplots&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;means&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yerr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;bar&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;stimulus_type  intensity (dB SPL)
+Chirp          0                     172.500000
+               10                    241.250000
+               20                    412.500000
+               30                    495.555556
+               40                    514.827586
+               50                    414.285714
+               60                    660.208333
+               70                    698.000000
+               80                    753.750000
+Clicks         10                    190.000000
+               20                    247.368421
+               30                    337.222222
+               40                    370.000000
+               50                    317.307692
+               60                    437.200000
+               70                    433.437500
+               80                    575.000000
+Name: amplitude, dtype: float64 stimulus_type  intensity (dB SPL)
+Chirp          0                     16.404806
+               10                    21.182458
+               20                    33.413758
+               30                    57.923839
+               40                    65.140026
+               50                    56.743962
+               60                    75.148173
+               70                    77.826269
+               80                    58.781322
+Clicks         10                     2.425356
+               20                    19.467454
+               30                    27.177560
+               40                    43.940412
+               50                    36.953917
+               60                    47.626354
+               70                    40.621927
+               80                    49.375783
+Name: amplitude, dtype: float64
+
+
+
+
+
+&amp;lt;matplotlib.axes.AxesSubplot at 0x10db6b110&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;notebooks/stats_bera_files/stats_bera_2_2.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;In [112]:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#amp_mean = data_bera.groupby([&amp;#39;intensity&amp;#39;, &amp;#39;stimulus_type&amp;#39;]).aggregate(np.mean)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#print amp_mean&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;stimulus_type&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#print group&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;group_agg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;intensity (dB SPL)&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aggregate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;group_agg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;amplitude&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;notebooks/stats_bera_files/stats_bera_3_0.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;In [113]:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#df = tmp.groupby([&amp;#39;stimulus_type&amp;#39;,&amp;#39;intensity_bin&amp;#39;])[&amp;#39;amplitude&amp;#39;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;intensity (dB SPL)&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;stimulus_type&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;amplitude&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#df.mean()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;means&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#take standard error of the mean instead of plain std.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;means&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;fig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subplots&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;means&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yerr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;bar&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;intensity (dB SPL)  stimulus_type
+0                   Chirp            172.500000
+10                  Chirp            241.250000
+                    Clicks           190.000000
+20                  Chirp            412.500000
+                    Clicks           247.368421
+30                  Chirp            495.555556
+                    Clicks           337.222222
+40                  Chirp            514.827586
+                    Clicks           370.000000
+50                  Chirp            414.285714
+                    Clicks           317.307692
+60                  Chirp            660.208333
+                    Clicks           437.200000
+70                  Chirp            698.000000
+                    Clicks           433.437500
+80                  Chirp            753.750000
+                    Clicks           575.000000
+Name: amplitude, dtype: float64 intensity (dB SPL)  stimulus_type
+0                   Chirp            16.404806
+10                  Chirp            21.182458
+                    Clicks            2.425356
+20                  Chirp            33.413758
+                    Clicks           19.467454
+30                  Chirp            57.923839
+                    Clicks           27.177560
+40                  Chirp            65.140026
+                    Clicks           43.940412
+50                  Chirp            56.743962
+                    Clicks           36.953917
+60                  Chirp            75.148173
+                    Clicks           47.626354
+70                  Chirp            77.826269
+                    Clicks           40.621927
+80                  Chirp            58.781322
+                    Clicks           49.375783
+Name: amplitude, dtype: float64
+
+
+
+
+
+&amp;lt;matplotlib.axes.AxesSubplot at 0x10dbc4890&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;notebooks/stats_bera_files/stats_bera_4_2.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;In [114]:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;means&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;stimulus_type&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Clicks&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#overall mean? check!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;stimulus_type
+Chirp            172.5
+Name: amplitude, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;In [115]:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MixedLM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_formula&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;amplitude ~ intensity * stimulus_type&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;groups&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;sub_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;                       Mixed Linear Model Regression Results
+==================================================================================
+Model:                      MixedLM         Dependent Variable:         amplitude 
+No. Observations:           291             Method:                     REML      
+No. Groups:                 16              Scale:                      15421.7194
+Min. group size:            3               Likelihood:                 -1834.6913
+Max. group size:            29              Converged:                  Yes       
+Mean group size:            18.2                                                  
+----------------------------------------------------------------------------------
+                                    Coef.   Std.Err.   z    P&amp;gt;|z|  [0.025   0.975]
+----------------------------------------------------------------------------------
+Intercept                            95.938   53.345  1.798 0.072   -8.616 200.492
+stimulus_type[T.Clicks]            -108.567   35.500 -3.058 0.002 -178.145 -38.989
+intensity                             8.538    0.471 18.112 0.000    7.614   9.462
+intensity:stimulus_type[T.Clicks]    -1.245    0.683 -1.824 0.068   -2.584   0.093
+Intercept RE                      36195.683  117.297                              
+==================================================================================
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;In [116]:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;model_anova&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ols&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;amplitude ~ stimulus_type*intensity&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stats&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;anova_lm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model_anova&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;typ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Type 2 ANOVA DataFrame&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model_anova&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#interestingly, by using plain ANOVA (without repeated measures), the effect dissolve in the between-subject variance! &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#therefor use MixedLM&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              amplitude   R-squared:                       0.312
+Model:                            OLS   Adj. R-squared:                  0.305
+Method:                 Least Squares   F-statistic:                     43.38
+Date:                Sat, 15 Aug 2015   Prob (F-statistic):           3.79e-23
+Time:                        10:51:42   Log-Likelihood:                -1967.8
+No. Observations:                 291   AIC:                             3944.
+Df Residuals:                     287   BIC:                             3958.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+=====================================================================================================
+                                        coef    std err          t      P&amp;gt;|t|      [95.0% Conf. Int.]
+-----------------------------------------------------------------------------------------------------
+Intercept                           238.6935     38.346      6.225      0.000       163.219   314.168
+stimulus_type[T.Clicks]             -76.5944     59.868     -1.279      0.202      -194.431    41.242
+intensity                             6.4898      0.770      8.427      0.000         4.974     8.006
+stimulus_type[T.Clicks]:intensity    -1.8457      1.150     -1.605      0.110        -4.109     0.417
+==============================================================================
+Omnibus:                        2.872   Durbin-Watson:                   0.663
+Prob(Omnibus):                  0.238   Jarque-Bera (JB):                2.756
+Skew:                           0.238   Prob(JB):                        0.252
+Kurtosis:                       3.008   Cond. No.                         320.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+                                  sum_sq   df          F        PR(&amp;gt;F)
+stimulus_type             1927226.558883    1  43.434354  2.094849e-10
+intensity                 4349489.911650    1  98.025468  4.505229e-20
+stimulus_type:intensity    114352.377676    1   2.577186  1.095140e-01
+Residual                 12734482.515712  287        NaN           NaN
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;In [117]:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;statsmodels.stats.multicomp&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pairwise_tukeyhsd&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pairwise_tukeyhsd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;amplitude&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;intensity&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#print pairwise_tukeyhsd(data_bera[&amp;#39;latency&amp;#39;], data_bera[&amp;#39;stimulus_type&amp;#39;])&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt; Multiple Comparison of Means - Tukey HSD,FWER=0.05
+===================================================
+group1 group2  meandiff   lower      upper   reject
+---------------------------------------------------
+  0      5      -110.0  -866.6536   646.6536 False 
+  0      10      3.5    -566.0882   573.0882 False 
+  0      15     -52.5   -979.2076   874.2076 False 
+  0      20     109.5   -440.6093   659.6093 False 
+  0      25     -72.5   -999.2076   854.2076 False 
+  0      30    188.8889 -360.8072   738.585  False 
+  0      35     -82.5   -773.2271   608.2271 False 
+  0      40    255.2083 -290.8594   801.2761 False 
+  0      45    -35.8333 -726.5604   654.8938 False 
+  0      50    140.0926 -414.4045   694.5896 False 
+  0      55     -62.5   -989.2076   864.2076 False 
+  0      60    326.875  -219.1927   872.9427 False 
+  0      70    307.6923 -247.5397   862.9243 False 
+  0      80    430.6395 -116.6966   977.9757 False 
+  5      10     113.5   -456.0882   683.0882 False 
+  5      15      57.5   -869.2076   984.2076 False 
+  5      20     219.5   -330.6093   769.6093 False 
+  5      25      37.5   -889.2076   964.2076 False 
+  5      30    298.8889 -250.8072   848.585  False 
+  5      35      27.5   -663.2271   718.2271 False 
+  5      40    365.2083 -180.8594   911.2761 False 
+  5      45    74.1667  -616.5604   764.8938 False 
+  5      50    250.0926 -304.4045   804.5896 False 
+  5      55      47.5   -879.2076   974.2076 False 
+  5      60    436.875  -109.1927   982.9427 False 
+  5      70    417.6923 -137.5397   972.9243 False 
+  5      80    540.6395  -6.6966   1087.9757 False 
+  10     15     -56.0   -837.4685   725.4685 False 
+  10     20     106.0   -127.5084   339.5084 False 
+  10     25     -76.0   -857.4685   705.4685 False 
+  10     30    185.3889  -47.1445   417.9223 False 
+  10     35     -86.0   -564.5498   392.5498 False 
+  10     40    251.7083  27.8872    475.5295  True 
+  10     45    -39.3333 -517.8831   439.2164 False 
+  10     50    136.5926  -107.073   380.2582 False 
+  10     55     -66.0   -847.4685   715.4685 False 
+  10     60    323.375   99.5538    547.1962  True 
+  10     70    304.1923  58.8589    549.5257  True 
+  10     80    427.1395  200.2412   654.0378  True 
+  15     20     162.0   -605.3868   929.3868 False 
+  15     25     -20.0   -1090.0698 1050.0698 False 
+  15     30    241.3889 -525.7018  1008.4796 False 
+  15     35     -30.0   -903.7083   843.7083 False 
+  15     40    307.7083 -456.7865  1072.2031 False 
+  15     45    16.6667  -857.0417   890.375  False 
+  15     50    192.5926 -577.9457   963.1309 False 
+  15     55     -10.0   -1080.0698 1060.0698 False 
+  15     60    379.375  -385.1198  1143.8698 False 
+  15     70    360.1923 -410.8751  1131.2597 False 
+  15     80    483.1395 -282.2618  1248.5409 False 
+  20     25     -182.0  -949.3868   585.3868 False 
+  20     30    79.3889  -100.2255   259.0032 False 
+  20     35     -192.0  -647.1916   263.1916 False 
+  20     40    145.7083  -22.4744   313.8911 False 
+  20     45   -145.3333  -600.525   309.8583 False 
+  20     50    30.5926  -163.2178   224.403  False 
+  20     55     -172.0  -939.3868   595.3868 False 
+  20     60    217.375   49.1922    385.5578  True 
+  20     70    198.1923   2.2892    394.0954  True 
+  20     80    321.1395  148.8828   493.3963  True 
+  25     30    261.3889 -505.7018  1028.4796 False 
+  25     35     -10.0   -883.7083   863.7083 False 
+  25     40    327.7083 -436.7865  1092.2031 False 
+  25     45    36.6667  -837.0417   910.375  False 
+  25     50    212.5926 -557.9457   983.1309 False 
+  25     55      10.0   -1060.0698 1080.0698 False 
+  25     60    399.375  -365.1198  1163.8698 False 
+  25     70    380.1923 -390.8751  1151.2597 False 
+  25     80    503.1395 -262.2618  1268.5409 False 
+  30     35   -271.3889 -726.0811   183.3034 False 
+  30     40    66.3194   -100.507   233.1459 False 
+  30     45   -224.7222 -679.4145    229.97  False 
+  30     50    -48.7963 -241.4309   143.8383 False 
+  30     55   -251.3889 -1018.4796  515.7018 False 
+  30     60    137.9861  -28.8403   304.8126 False 
+  30     70    118.8034  -75.9365   313.5434 False 
+  30     80    241.7506  70.8179    412.6834  True 
+  35     40    337.7083 -112.5906   788.0073 False 
+  35     45    46.6667  -571.1384   664.4718 False 
+  35     50    222.5926 -237.8921   683.0773 False 
+  35     55      20.0   -853.7083   893.7083 False 
+  35     60    409.375   -40.924    859.674  False 
+  35     70    390.1923  -71.1771   851.5617 False 
+  35     80    513.1395  61.3032    964.9759  True 
+  40     45   -291.0417 -741.3406   159.2573 False 
+  40     50   -115.1157 -297.1383   66.9068  False 
+  40     55   -317.7083 -1082.2031  446.7865 False 
+  40     60    71.6667   -82.7846   226.1179 False 
+  40     70     52.484  -131.7653   236.7332 False 
+  40     80    175.4312  16.5535    334.3089  True 
+  45     50    175.9259 -284.5588   636.4107 False 
+  45     55    -26.6667  -900.375   847.0417 False 
+  45     60    362.7083  -87.5906   813.0073 False 
+  45     70    343.5256 -117.8438   804.8951 False 
+  45     80    466.4729  14.6365    918.3092  True 
+  50     55   -202.5926 -973.1309   567.9457 False 
+  50     60    186.7824   4.7598    368.805   True 
+  50     70    167.5997  -40.306    375.5055 False 
+  50     80    290.5469  104.7537   476.3402  True 
+  55     60    389.375  -375.1198  1153.8698 False 
+  55     70    370.1923 -400.8751  1141.2597 False 
+  55     80    493.1395 -272.2618  1258.5409 False 
+  60     70    -19.1827 -203.4319   165.0665 False 
+  60     80    103.7645  -55.1132   262.6422 False 
+  70     80    122.9472  -65.0281   310.9225 False 
+---------------------------------------------------
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;In [117]:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#ideas for plotting:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#- plot amplitude Chirp against corresponding amplitude for Click&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#- plot amplitude Chirp against behavioral threshold (adults)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;In [124]:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;tmp_grp_st&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;stimulus_type&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp_grp_st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;stimulus_type&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Chirps&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;amplitude&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp_grp_st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;stimulus_type&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Clicks&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;amplitude&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+
+&amp;lt;ipython-input-124-bcb0570427b0&amp;gt; in &amp;lt;module&amp;gt;()
+      1 tmp_grp_st = tmp.groupby(&#39;stimulus_type&#39;)
+----&amp;gt; 2 plt.plot(tmp_grp_st[&#39;stimulus_type&#39;==&#39;Chirps&#39;][&#39;amplitude&#39;], tmp_grp_st[&#39;stimulus_type&#39;==&#39;Clicks&#39;][&#39;amplitude&#39;])
+
+
+/usr/local/lib/python2.7/site-packages/pandas/core/groupby.pyc in __getitem__(self, key)
+   2900         else:
+   2901             if key not in self.obj:
+-&amp;gt; 2902                 raise KeyError(&quot;Column not found: %s&quot; % key)
+   2903             # kind of a kludge
+   2904             return SeriesGroupBy(self.obj[key], selection=key,
+
+
+KeyError: &#39;Column not found: False&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;In [119]:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;colors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;purple&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;green&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;markers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;o&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;v&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;intensity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stimulus&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Clicks&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Chirps&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;factors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;marker&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;markers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;factors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+
+&amp;lt;ipython-input-119-356500ad8845&amp;gt; in &amp;lt;module&amp;gt;()
+      2 markers = [&#39;o&#39;, &#39;v&#39;]
+      3 
+----&amp;gt; 4 for factors, group in tmp:
+      5     plt.scatter(group[&#39;Clicks&#39;], group[&#39;Chirps&#39;], color=colors[factors],
+      6     marker=markers[factors], s=12**2)
+
+
+ValueError: too many values to unpack
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;In []:&lt;/strong&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 20 Aug 2015 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/python/stats/</link>
+        <guid isPermaLink="true">http://localhost:4000/python/stats/</guid>
+      </item>
+    
+      <item>
+        <title>Python data analysis &amp; visualisation</title>
+        <description>&lt;p&gt;Recently I had to do some data-analysis en visualisation for multi-factorial data. Importantly, the question was about the weight (/significance) of one of the factors, taking into account i) the within- and between-subjects variance, ii) the multiple-comparisons problem (i.e., multiple related measures within one subject), and missing data (i.e. not all condition measured in all subjects). This short overview shows some of the ways to properly (?) address each of these issues and also shortly touching on the obsession with p-values.&lt;/p&gt;
+
+&lt;p&gt;The key here is using a clever way to organise your data and using some kind of statistical model to assess how much variance is explained for each of the factors and comparing this to some residual variance, in turn assessing whether the factors explain significantly more variance the some unexplained variance.&lt;/p&gt;
+
+&lt;p&gt;First, acquire the data. In my experience, the best way to organise the data is by using rows for measures and columns for factor. For example, I have a data-set with multiple subjects (sub_ids), stimulus conditions (e.g. sound intensity for two different kinds of stimuli), ears (l/r). For each of the measurements I have an amplitude and latency (I’m talking about an ABR study using either Click-stimuli or Chirps). This is all saved in a plain-text file (see next block):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tcl&quot; data-lang=&quot;tcl&quot;&gt;&lt;span class=&quot;nv&quot;&gt;sub_id&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;intensity&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;initials&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ear&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;stimulus_type&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;latency&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;amplitude&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JM&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Rechts&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Chirp&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;5.77&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;620&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JM&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Rechts&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Clicks&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;5.57&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;450&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JM&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Links&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Chirp&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;5.57&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;725&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JM&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Links&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Clicks&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;5.73&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;500&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;70&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JM&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Rechts&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Clicks&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;5.93&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;475&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JM&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Rechts&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Chirp&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;6.27&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;925&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JM&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Links&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Chirp&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;6.20&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;725&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JM&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Links&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Clicks&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;6.17&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;430&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JM&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Rechts&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Clicks&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;6.43&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;225&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we get to the actual python framework. For this we use &lt;a href=&quot;http://pandas.pydata.org/&quot;&gt;Panda’s&lt;/a&gt; to get, select and group the data according to our needs. The beauty of Panda’s is that it is really geared towards this purpose. First of all, import all packages (including statsmodel, pandas and seaborn - I’ll get to that later!)&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os.path&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;op&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;glob&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;plt&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pd&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;seaborn&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sns&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;statsmodels.api&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sm&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;statsmodels.formula.api&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ols&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#load the data&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;resdir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/cplanting/ABR-vis/&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data_bera&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;op&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;amp.csv&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data_bera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;   sub_id  intensity initials     ear stimulus_type  latency  amplitude
+0       1         80       JM  Rechts         Chirp     5.77        620
+1       1         80       JM  Rechts        Clicks     5.57        450
+2       1         80       JM   Links         Chirp     5.57        725
+3       1         80       JM   Links        Clicks     5.73        500
+4       1         70       JM  Rechts        Clicks     5.93        475
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Since the data also contains 5 dB-step sizes (i.e. 45 dB), let’s bin the data by rounding to the next multiple of 10. Rather than overwriting existing data, I just add a new column.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;int_round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mult&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#round to closest multiple of 10; 5.0 -&amp;gt; 0.0; 5.1 -&amp;gt; 10.0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mult&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mult&lt;/span&gt;
+ 
+&lt;span class=&quot;n&quot;&gt;data_bera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;intensity (dB SPL)&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int_round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data_bera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;intensity&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;10.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data_bera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data_bera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intensity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;85&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The next step is visualising the data. A neat package that I use is &lt;a href=&quot;http://stanford.edu/~mwaskom/software/seaborn/&quot;&gt;Seaborn&lt;/a&gt;, a Python visualization library based on matplotlib. It provides a high-level interface for drawing attractive statistical graphics. And it really does. For this data-set I want a factorplot with on the x-axis the intensity on the y-axis the amplitude and a bar for each of the two stimuli-types separately. Also, I’d like to have some idea of the confidence interval, taken as the 68 percentile based on 5000 bootstraps (i.e. the mean ± standard deviation; see e.g. the &lt;a href=&quot;https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule&quot;&gt;68-95-99.7 rule&lt;/a&gt;). This is done simply by invoking the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;g0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;factorplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;intensity (dB SPL)&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;amplitude&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;stimulus_type&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;auto&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                     &lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;68&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_boot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;estimator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+                     &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;palette&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;muted&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;notebooks/stats_bera_files/stats_bera_0_1.png&quot; alt=&quot;png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This already give me a strong indication that there is a strong effect of stimulus-type, and sound-intensity. To further explore this, I’m going to model the data based using two approaches. One is the plain-old ANOVA with two factors (stimulus-type &amp;amp; intensity) and their interaction. This brushes over the glaring point of repeated measures but demonstrates ‘how-to’ do this kind of analysis (whether rightly or wrongly). The other approach is by using a &lt;a href=&quot;https://en.wikipedia.org/wiki/Generalized_linear_mixed_model&quot;&gt;generalized linear mixed model&lt;/a&gt;.
+This GLMM approach models each response (/variable) as a combination of a random effect (e.g., the overall mean performance of a subject) and a fixed effect (e.g., the effect of a perturbation you induced, such a intensity level or condition). Especially when measuring several things within each subject, this mixed-model approach is really the way to go. Moreover, it is more geared towards the missing-data issue that ANOVA really cannot deal.&lt;/p&gt;
+
+&lt;p&gt;First let’s check the &lt;strong&gt;ANOVA model&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;model_anova&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ols&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;amplitude ~ stimulus_type*intensity&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stats&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;anova_lm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model_anova&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;typ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Type 2 ANOVA DataFrame&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model_anova&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              amplitude   R-squared:                       0.312
+Model:                            OLS   Adj. R-squared:                  0.305
+Method:                 Least Squares   F-statistic:                     43.38
+Date:                Sat, 15 Aug 2015   Prob (F-statistic):           3.79e-23
+Time:                        10:51:42   Log-Likelihood:                -1967.8
+No. Observations:                 291   AIC:                             3944.
+Df Residuals:                     287   BIC:                             3958.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+=====================================================================================================
+                                        coef    std err          t      P&amp;gt;|t|      [95.0% Conf. Int.]
+-----------------------------------------------------------------------------------------------------
+Intercept                           238.6935     38.346      6.225      0.000       163.219   314.168
+stimulus_type[T.Clicks]             -76.5944     59.868     -1.279      0.202      -194.431    41.242
+intensity                             6.4898      0.770      8.427      0.000         4.974     8.006
+stimulus_type[T.Clicks]:intensity    -1.8457      1.150     -1.605      0.110        -4.109     0.417
+==============================================================================
+Omnibus:                        2.872   Durbin-Watson:                   0.663
+Prob(Omnibus):                  0.238   Jarque-Bera (JB):                2.756
+Skew:                           0.238   Prob(JB):                        0.252
+Kurtosis:                       3.008   Cond. No.                         320.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+                                  sum_sq   df          F        PR(&amp;gt;F)
+stimulus_type             1927226.558883    1  43.434354  2.094849e-10
+intensity                 4349489.911650    1  98.025468  4.505229e-20
+stimulus_type:intensity    114352.377676    1   2.577186  1.095140e-01
+Residual                 12734482.515712  287        NaN           NaN
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Part of the variance is explained and the model fits the data well. Both the Intercept and the intensity explain a significant part of the variance. When looking at the stimulus type, however, it does not seem to explain a lot… Looking at the factorplot seems to suggest differently. I think* that it has to do with the large intersubject variance; probably to a larger degree than the within-subject variance. And here comes the mixed-model approach. This is done by defining a mixed model with two main factors and their interaction (note that the main effects are automatically added to the model when defining the interaction) and allowing for a random intercept for each subject (groups=tmp[“sub_id”]). This approach is very short in python code as can be seen here:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MixedLM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_formula&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;amplitude ~ intensity * stimulus_type&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;groups&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;sub_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;                   Mixed Linear Model Regression Results ================================================================================== Model:                      MixedLM         Dependent Variable:         amplitude  No. Observations:           291             Method:                     REML       No. Groups:                 16              Scale:                      15421.7194 Min. group size:            3               Likelihood:                 -1834.6913 Max. group size:            29              Converged:                  Yes        Mean group size:            18.2                                                   ----------------------------------------------------------------------------------
+                                Coef.   Std.Err.   z    P&amp;gt;|z|  [0.025   0.975] ---------------------------------------------------------------------------------- Intercept                            95.938   53.345  1.798 0.072   -8.616 200.492 stimulus_type[T.Clicks]            -108.567   35.500 -3.058 0.002 -178.145 -38.989 intensity                             8.538    0.471 18.112 0.000    7.614   9.462 intensity:stimulus_type[T.Clicks]    -1.245    0.683 -1.824 0.068   -2.584   0.093 Intercept RE                      36195.683  117.297                               ==================================================================================
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;By using a random intercept, the factor stimulus_type also pops up as significant. Note that this approach is very comparable to the LME4 package in R as can be see in the &lt;a href=&quot;http://statsmodels.sourceforge.net/stable/examples/notebooks/generated/mixed_lm_example.html&quot;&gt;examples&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As can be seen, there is a p-value column in the output. More interestingly th&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 19 Aug 2015 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/python/python_data_analysis_and_visualisation/</link>
+        <guid isPermaLink="true">http://localhost:4000/python/python_data_analysis_and_visualisation/</guid>
+      </item>
+    
+      <item>
+        <title>One Bright Dot</title>
+        <description>&lt;p&gt;Not even 2 minutes long but a beatiful short animation “One Bright Dot”. Love the colors, the moodyness and the dreamyness…&lt;/p&gt;
+&lt;iframe src=&quot;https://player.vimeo.com/video/124400795&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Sun, 02 Aug 2015 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/animation/onebrightdot/</link>
+        <guid isPermaLink="true">http://localhost:4000/animation/onebrightdot/</guid>
+      </item>
     
       <item>
         <title>The Strange Case of Dr. Jekyll and Mr. Hyde,</title>
@@ -29,8 +637,8 @@
 
 </description>
         <pubDate>Mon, 27 Jul 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/general/myfirstjekyll/</link>
-        <guid isPermaLink="true">https://crisly.github.io/general/myfirstjekyll/</guid>
+        <link>http://localhost:4000/general/myfirstjekyll/</link>
+        <guid isPermaLink="true">http://localhost:4000/general/myfirstjekyll/</guid>
       </item>
     
       <item>
@@ -38,8 +646,8 @@
         <description>&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/w2mKRjPHUNg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Sat, 25 Jul 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/music/decades/</link>
-        <guid isPermaLink="true">https://crisly.github.io/music/decades/</guid>
+        <link>http://localhost:4000/music/decades/</link>
+        <guid isPermaLink="true">http://localhost:4000/music/decades/</guid>
       </item>
     
       <item>
@@ -50,8 +658,8 @@
 
 </description>
         <pubDate>Thu, 23 Jul 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/music/black_sun/</link>
-        <guid isPermaLink="true">https://crisly.github.io/music/black_sun/</guid>
+        <link>http://localhost:4000/music/black_sun/</link>
+        <guid isPermaLink="true">http://localhost:4000/music/black_sun/</guid>
       </item>
     
       <item>
@@ -64,7 +672,7 @@ Especially the first song, ‘Black Sun’ keeps haunting me.&lt;/p&gt;
 &lt;p&gt;“What Sarah Said” also features in a spotify-list with mainly sad song (which eventually might share).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Moon Hooch&lt;/strong&gt;
-Two screeming saxophones and one drummer that keeps the beat up. What can I say - just listen!&lt;/p&gt;
+Two screaming saxophones and one drummer that keeps the beat up. What can I say - just listen!&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Tallest Man on Earth&lt;/strong&gt;
 With his raw voice not very unlike Bob Dylan his songs might also hit your ‘sad string’ although it’s happy-go-lucky at times.&lt;/p&gt;
@@ -76,8 +684,8 @@ Following their musical love-story &lt;a href=&quot;http://en.wikipedia.org/wiki
 &lt;a href=&quot;http://www.npr.org/series/tiny-desk-concerts/&quot;&gt;http://www.npr.org/series/tiny-desk-concerts/&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 21 Apr 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/music/tiny-desk-concerts/</link>
-        <guid isPermaLink="true">https://crisly.github.io/music/tiny-desk-concerts/</guid>
+        <link>http://localhost:4000/music/tiny-desk-concerts/</link>
+        <guid isPermaLink="true">http://localhost:4000/music/tiny-desk-concerts/</guid>
       </item>
     
       <item>
@@ -104,8 +712,8 @@ Following their musical love-story &lt;a href=&quot;http://en.wikipedia.org/wiki
 &lt;img src=&quot;https://crisly.github.io/docs/ipython_inline.png&quot; alt=&quot;ipython inline graphics&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 19 May 2012 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/general/interactive-pythonnumpymatplotlib/</link>
-        <guid isPermaLink="true">https://crisly.github.io/general/interactive-pythonnumpymatplotlib/</guid>
+        <link>http://localhost:4000/general/interactive-pythonnumpymatplotlib/</link>
+        <guid isPermaLink="true">http://localhost:4000/general/interactive-pythonnumpymatplotlib/</guid>
       </item>
     
   </channel>
