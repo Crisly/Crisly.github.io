@@ -7,6 +7,18 @@
     <atom:link href="https://crisly.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Choros</title>
+        <description>&lt;p&gt;A mesmerizing hypnotic, pulsating exploration of movement in dance by &lt;a href=&quot;http://langanfilms.com/index.html&quot;&gt;Michael Langan&lt;/a&gt;. A breathtaking visualisation of sliced image footage with the hypnotic beating of Steve Reich’s &lt;a href=&quot;https://www.youtube.com/watch?v=ZXJWO2FQ16c&quot;&gt;Music for 18 Musicians&lt;/a&gt;.&lt;/p&gt;
+
+&lt;iframe src=&quot;https://player.vimeo.com/video/35770492?color=ffffff&amp;amp;title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;600&quot; height=&quot;338&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href=&quot;https://vimeo.com/35770492&quot;&gt;Choros&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/langanfilms&quot;&gt;Michael Langan&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 30 Aug 2015 00:00:00 +0200</pubDate>
+        <link>https://crisly.github.io/animation/choros/</link>
+        <guid isPermaLink="true">https://crisly.github.io/animation/choros/</guid>
+      </item>
+    
+      <item>
         <title>Python data analysis &amp; visualisation</title>
         <description>&lt;p&gt;Recently I had to do some data-analysis en visualisation for multi-factorial data. Importantly, the question was about the weight (/significance) of one of the factors, taking into account i) the within- and between-subjects variance, ii) the multiple-comparisons problem (i.e., multiple related measures within one subject), and missing data (i.e. not all condition measured in all subjects). This short overview shows some of the ways to properly (?) address each of these issues and also shortly touching on the obsession with p-values (p &amp;lt; 0.05 is more important than the effect size).&lt;/p&gt;
 
