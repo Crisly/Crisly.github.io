@@ -5,64 +5,64 @@
 	<channel>
 		<title></title>
 		<description>»Crisly&#39;s antics« is my personal webspace. About neuroscience, tinnitus,  photos and more.</description>
-		<link>http://localhost:4000//</link>
-		<atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml" />
+		<link>https://www.crisly.nl/</link>
+		<atom:link href="https://www.crisly.nl/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>The Newyorker on brexit</title>
-				<link>http://localhost:4000//powerfulpictures/brexit/</link>
+				<link>https://www.crisly.nl/powerfulpictures/brexit/</link>
 				<pubDate>Sat, 25 Jun 2016 00:00:00 +0200</pubDate>
-				<description>&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/brexit.png&quot; alt=&quot;newyorker take on brexit&quot; title=&quot;newyorker take on brexit&quot; /&gt;&lt;/p&gt;
+				<description>&lt;p&gt;&lt;img src=&quot;https://www.crisly.nl/images/brexit.png&quot; alt=&quot;newyorker take on brexit&quot; title=&quot;newyorker take on brexit&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;source: &lt;img src=&quot;http://localhost:4000/images/ext_link.png&quot; alt=&quot;ext.link&quot; title=&quot;ext.link&quot; /&gt; &lt;a href=&quot;http://www.newyorker.com/culture/culture-desk/cover-story-2016-07-04&quot;&gt;http://www.newyorker.com/culture/culture-desk/cover-story-2016-07-04&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;source: &lt;img src=&quot;https://www.crisly.nl/images/ext_link.png&quot; alt=&quot;ext.link&quot; title=&quot;ext.link&quot; /&gt; &lt;a href=&quot;http://www.newyorker.com/culture/culture-desk/cover-story-2016-07-04&quot;&gt;http://www.newyorker.com/culture/culture-desk/cover-story-2016-07-04&lt;/a&gt;&lt;/p&gt;
 </description>
-				<guid isPermaLink="true">http://localhost:4000//powerfulpictures/brexit/</guid>
+				<guid isPermaLink="true">https://www.crisly.nl/powerfulpictures/brexit/</guid>
 			</item>
 		
 			<item>
 				<title>Ellis</title>
-				<link>http://localhost:4000//animation/Ellis/</link>
+				<link>https://www.crisly.nl/animation/Ellis/</link>
 				<pubDate>Sat, 18 Jun 2016 00:00:00 +0200</pubDate>
 				<description>&lt;iframe src=&quot;https://player.vimeo.com/video/140332198?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;600&quot; height=&quot;338&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-				<guid isPermaLink="true">http://localhost:4000//animation/Ellis/</guid>
+				<guid isPermaLink="true">https://www.crisly.nl/animation/Ellis/</guid>
 			</item>
 		
 			<item>
 				<title>Oma</title>
-				<link>http://localhost:4000//animation/oma/</link>
+				<link>https://www.crisly.nl/animation/oma/</link>
 				<pubDate>Wed, 11 May 2016 00:00:00 +0200</pubDate>
 				<description>&lt;iframe src=&quot;https://player.vimeo.com/video/164076380?color=c9ff23&amp;amp;title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;600&quot; height=&quot;338&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-				<guid isPermaLink="true">http://localhost:4000//animation/oma/</guid>
+				<guid isPermaLink="true">https://www.crisly.nl/animation/oma/</guid>
 			</item>
 		
 			<item>
 				<title>Nils Frahm</title>
-				<link>http://localhost:4000//music/frahm-live/</link>
+				<link>https://www.crisly.nl/music/frahm-live/</link>
 				<pubDate>Thu, 22 Oct 2015 00:00:00 +0200</pubDate>
 				<description>&lt;p&gt;One of the best contemporary musician, composer, and producer. Just have a look at his concert at the edge of classical and electronica.&lt;/p&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/xih8aiacRSk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 </description>
-				<guid isPermaLink="true">http://localhost:4000//music/frahm-live/</guid>
+				<guid isPermaLink="true">https://www.crisly.nl/music/frahm-live/</guid>
 			</item>
 		
 			<item>
 				<title>Choros</title>
-				<link>http://localhost:4000//animation/choros/</link>
+				<link>https://www.crisly.nl/animation/choros/</link>
 				<pubDate>Sun, 30 Aug 2015 00:00:00 +0200</pubDate>
 				<description>&lt;p&gt;A mesmerizing hypnotic, pulsating exploration of movement in dance by &lt;a href=&quot;http://langanfilms.com/index.html&quot;&gt;Michael Langan&lt;/a&gt;. A breathtaking visualisation of sliced image footage with the hypnotic beating of Steve Reich’s &lt;a href=&quot;https://www.youtube.com/watch?v=ZXJWO2FQ16c&quot;&gt;Music for 18 Musicians&lt;/a&gt;.&lt;/p&gt;
 
 &lt;iframe src=&quot;https://player.vimeo.com/video/35770492?color=ffffff&amp;amp;title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;600&quot; height=&quot;338&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;a href=&quot;https://vimeo.com/35770492&quot;&gt;Choros&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/langanfilms&quot;&gt;Michael Langan&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
 </description>
-				<guid isPermaLink="true">http://localhost:4000//animation/choros/</guid>
+				<guid isPermaLink="true">https://www.crisly.nl/animation/choros/</guid>
 			</item>
 		
 			<item>
 				<title>Python data analysis &amp; visualisation</title>
-				<link>http://localhost:4000//python/python_data_analysis_and_visualisation/</link>
+				<link>https://www.crisly.nl/python/python_data_analysis_and_visualisation/</link>
 				<pubDate>Wed, 19 Aug 2015 00:00:00 +0200</pubDate>
 				<description>&lt;p&gt;Recently I had to do some data-analysis and visualisation for multi-factorial data. Importantly, the question was about the weight (/significance) of one of the factors, taking into account i) the within- and between-subjects variance, ii) the multiple-comparisons problem (i.e., multiple related measures within one subject), and missing data (i.e. not all condition measured in all subjects). This short overview shows some of the ways to properly (?) address each of these issues and also shortly touching on the obsession with p-values (p &amp;lt; 0.05 is more important than the effect size).&lt;/p&gt;
 
@@ -198,22 +198,22 @@ Intercept RE                      36195.683  117.297
 &lt;p&gt;By using a random intercept, the factor stimulus_type also pops up as significant. Note that this approach is very comparable to the LME4 package in R as can be see in the &lt;a href=&quot;http://statsmodels.sourceforge.net/stable/examples/notebooks/generated/mixed_lm_example.html&quot;&gt;examples&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-				<guid isPermaLink="true">http://localhost:4000//python/python_data_analysis_and_visualisation/</guid>
+				<guid isPermaLink="true">https://www.crisly.nl/python/python_data_analysis_and_visualisation/</guid>
 			</item>
 		
 			<item>
 				<title>One Bright Dot</title>
-				<link>http://localhost:4000//animation/onebrightdot/</link>
+				<link>https://www.crisly.nl/animation/onebrightdot/</link>
 				<pubDate>Sun, 02 Aug 2015 00:00:00 +0200</pubDate>
 				<description>&lt;p&gt;Not even 2 minutes long but a beatiful short animation “One Bright Dot”. Love the colors, the moodyness and the dreamyness…&lt;/p&gt;
 &lt;iframe src=&quot;https://player.vimeo.com/video/124400795&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-				<guid isPermaLink="true">http://localhost:4000//animation/onebrightdot/</guid>
+				<guid isPermaLink="true">https://www.crisly.nl/animation/onebrightdot/</guid>
 			</item>
 		
 			<item>
 				<title>The Strange Case of Dr. Jekyll and Mr. Hyde,</title>
-				<link>http://localhost:4000//general/myfirstjekyll/</link>
+				<link>https://www.crisly.nl/general/myfirstjekyll/</link>
 				<pubDate>Mon, 27 Jul 2015 00:00:00 +0200</pubDate>
 				<description>&lt;p&gt;A few weeks ago, I stumbled over Jekyll, a ruby implementation that is geared towards producing ‘responsive’ static websites. The idea of having plain-text posts, which in turn get rendered into nice, clean, fast HTML sites, is really appealing. Why? Have a look at a generic CMS such as WordPress or Joomla. It may have a nice interface allowing you to type posts, add some images and links and saving them online that make it sort-of easy-to-use. The back-end of these sites however is often database-driven (MySQL) and allows for more than any user (/web developer) might ever want and, perhaps more importantly, slowing it down. Too many options and difficult template-adjusting-tinkering-sessions as a consequence.&lt;/p&gt;
 
@@ -224,28 +224,28 @@ Intercept RE                      36195.683  117.297
 &lt;p&gt;This website is my first attempt to get a fresh new start.  Occasionally things may be broken but the steep-learning curve (in combination with excellent examples of themes, such as [https://phlow.github.io/feeling-responsive]) already got me here. Improvements will follow but until then, it seems like a good start. I like it anyway…&lt;/p&gt;
 
 </description>
-				<guid isPermaLink="true">http://localhost:4000//general/myfirstjekyll/</guid>
+				<guid isPermaLink="true">https://www.crisly.nl/general/myfirstjekyll/</guid>
 			</item>
 		
 			<item>
 				<title>Joy Division</title>
-				<link>http://localhost:4000//music/decades/</link>
+				<link>https://www.crisly.nl/music/decades/</link>
 				<pubDate>Sat, 25 Jul 2015 00:00:00 +0200</pubDate>
 				<description>&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/w2mKRjPHUNg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-				<guid isPermaLink="true">http://localhost:4000//music/decades/</guid>
+				<guid isPermaLink="true">https://www.crisly.nl/music/decades/</guid>
 			</item>
 		
 			<item>
 				<title>Death Cab for Cutie</title>
-				<link>http://localhost:4000//music/black_sun/</link>
+				<link>https://www.crisly.nl/music/black_sun/</link>
 				<pubDate>Thu, 23 Jul 2015 00:00:00 +0200</pubDate>
 				<description>&lt;iframe width=&quot;600&quot; height=&quot;338&quot; src=&quot;http://www.npr.org/templates/event/embeddedVideo.php?storyId=397696708&amp;amp;mediaId=397700321&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;A few haunting song by Death Cab for Cutie &lt;cite&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Death_Cab_for_Cutie&quot;&gt;Wikipedia&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
 
 </description>
-				<guid isPermaLink="true">http://localhost:4000//music/black_sun/</guid>
+				<guid isPermaLink="true">https://www.crisly.nl/music/black_sun/</guid>
 			</item>
 		
 	</channel>
