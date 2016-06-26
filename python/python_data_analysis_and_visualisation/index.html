@@ -1,4 +1,382 @@
-<!doctype html> <html class="no-js" lang="en"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>Python data analysis & visualisation</title> <link rel="stylesheet" href="https://crisly.github.io/assets/css/styles_feeling_responsive.css"> <script src="https://crisly.github.io/assets/js/modernizr.min.js"></script> <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script> <script> WebFont.load({ google: { families: [ 'Lato:400,700,400italic:latin', 'Volkhov::latin' ] } }); </script> <noscript> <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Volkhov' rel='stylesheet' type='text/css'> </noscript> <meta name="google-site-verification" content="Vk0IOJ2jwG_qEoG7fuEXYqv0m2rLa8P778Fi_GrsgEQ" /> <meta name="description" content="»Crisly&#39;s antics« is my personal webspace. About neuroscience, tinnitus, photos and more."/> <link rel="author" href="https://plus.google.com/u/0/104027836769579186358"/> <!-- Facebook Optimization --> <meta property="og:locale" content="en_EN" /> <meta property="og:title" content="Python data analysis & visualisation" /> <meta property="og:description" content="»Crisly&#39;s antics« is my personal webspace. About neuroscience, tinnitus, photos and more."/> <meta property="og:url" content="https://crisly.github.io//python/python_data_analysis_and_visualisation/" /> <meta property="og:site_name" content="" /> <!-- Search Engine Optimization --> <link type="text/plain" rel="author" href="https://crisly.github.io/humans.txt" /> </head> <body id="top-of-page" class=""> <div id="navigation" class="sticky"> <nav class="top-bar" data-topbar> <ul class="title-area"> <li class="name"> <h1 class="show-for-small-only"><a href="https://crisly.github.io" class="icon-tree"> </a></h1> </li> <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone --> <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li> </ul> <section class="top-bar-section"> <ul class="right"> <li class="divider"></li> <li><a href="https://crisly.github.io/search/">Search</a></li> <li class="divider"></li> <li><a href="https://crisly.github.io/contact/">Contact</a></li> </ul> <ul class="left"> <li><a href="https://crisly.github.io/">Home</a></li> <li class="divider"></li> <li class="has-dropdown"> <a href="https://crisly.github.io/blog/">Blog</a> <ul class="dropdown"> <li><a href="https://crisly.github.io/animation/">Animation</a></li> <li><a href="https://crisly.github.io/general/">General</a></li> <li><a href="https://crisly.github.io/music/">Music</a></li> <li><a href="https://crisly.github.io/python/">Python & science</a></li> <li><a href="https://crisly.github.io/blog/archive/">Blog Archive</a></li> </ul> </li> <li class="divider"></li> <li><a href="https://crisly.github.io/photos/">Photos</a></li> <li class="divider"></li> <li><a href="https://crisly.github.io/resume/">Resume</a></li> <li class="divider"></li> </ul> </section> </nav> </div><!-- /#navigation --> <div id="masthead"> <div class="row"> <div class="small-12 columns"> <a id="logo" href="https://crisly.github.io" title=" – "> <img src="https://crisly.github.io/assets/img/" alt=" – "> </a> </div><!-- /.small-12.columns --> </div><!-- /.row --> </div><!-- /#masthead --> <nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs"> <li><a href="https://crisly.github.io">Start</a></li> <li><a href="https://crisly.github.io/python/">python</a> <li class="current">Python data analysis & visualisation</li> </nav> <div class="masthead-caption"> Crosscombe, Cornwall, UK </div> <div class="row t30"> <div class="medium-8 columns medium-offset-2 end"> <article itemscope itemtype="http://schema.org/Article"> <header> <span itemprop="name"> <p class="subheadline">Or do stats using python</p> <h1>Python data analysis & visualisation</h1> </span> </header> <span itemprop="articleSection"> <p>Recently I had to do some data-analysis en visualisation for multi-factorial data. Importantly, the question was about the weight (/significance) of one of the factors, taking into account i) the within- and between-subjects variance, ii) the multiple-comparisons problem (i.e., multiple related measures within one subject), and missing data (i.e. not all condition measured in all subjects). This short overview shows some of the ways to properly (?) address each of these issues and also shortly touching on the obsession with p-values (p &lt; 0.05 is more important than the effect size).</p> <p>The key here is using a clever way to organise your data and using some kind of statistical model to assess how much variance is explained for each of the factors and comparing this to some residual variance, in turn assessing whether the factors explain significantly more variance the some unexplained variance.</p> <p>First, acquire the data. In my experience, the best way to organise the data is by using rows for measures and columns for factor. For example, I have a data-set with multiple subjects (sub_ids), stimulus conditions (e.g. sound intensity for two different kinds of stimuli), ears (l/r). For each of the measurements I have an amplitude and latency (I’m talking about an ABR study using either Click-stimuli or Chirps). This is all saved in a plain-text file (see next block):</p> <figure class="highlight"><pre><code class="language-tcl" data-lang="tcl">sub_id<span class="p">;</span>intensity<span class="p">;</span>initials<span class="p">;</span>ear<span class="p">;</span>stimulus_type<span class="p">;</span>latency<span class="p">;</span>amplitude
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Python data analysis & visualisation</title>
+	<link rel="stylesheet" type="text/css" href="http://localhost:4000//assets/css/styles_feeling_responsive.css" />
+	<script src="http://localhost:4000//assets/js/modernizr.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: [ 'Lato:400,700,400italic:latin', 'Volkhov::latin' ]
+      }
+    });
+  </script>
+
+  <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Volkhov' rel='stylesheet' type='text/css' />
+  </noscript>
+
+  <meta name="google-site-verification" content="Vk0IOJ2jwG_qEoG7fuEXYqv0m2rLa8P778Fi_GrsgEQ" />
+	
+	<meta name="description" content="»Crisly&#39;s antics« is my personal webspace. About neuroscience, tinnitus,  photos and more." />
+
+	<link rel="author" href="https://plus.google.com/u/0/104027836769579186358"/>
+
+	
+
+
+
+	
+	<link rel="icon" sizes="32x32" href="http://localhost:4000//assets/img/favicon-32x32.png" />
+
+
+
+
+	
+	<link rel="icon" sizes="192x192" href="http://localhost:4000//assets/img/touch-icon-192x192.png" />
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="http://localhost:4000//assets/img/apple-touch-icon-180x180-precomposed.png" />
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://localhost:4000//assets/img/apple-touch-icon-152x152-precomposed.png" />
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000//assets/img/apple-touch-icon-144x144-precomposed.png" />
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://localhost:4000//assets/img/apple-touch-icon-120x120-precomposed.png" />
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000//assets/img/apple-touch-icon-114x114-precomposed.png" />
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://localhost:4000//assets/img/apple-touch-icon-76x76-precomposed.png" />
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000//assets/img/apple-touch-icon-72x72-precomposed.png" />
+
+
+
+
+	
+	<link rel="apple-touch-icon-precomposed" href="http://localhost:4000//assets/img/apple-touch-icon-precomposed.png" />	
+
+
+
+
+	
+	<meta name="msapplication-TileImage" content="http://localhost:4000//assets/img/msapplication_tileimage.png" />
+
+
+
+
+	
+	<meta name="msapplication-TileColor" content="#fabb00" />
+
+
+
+	<!-- Facebook Optimization -->
+	<meta property="og:locale" content="en_EN" />
+	
+	<meta property="og:title" content="Python data analysis & visualisation" />
+	<meta property="og:description" content="»Crisly&#39;s antics« is my personal webspace. About neuroscience, tinnitus,  photos and more." />
+	<meta property="og:url" content="http://localhost:4000///python/python_data_analysis_and_visualisation/" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:image" content="http://localhost:4000/images/stats_thumb.png" />
+
+	
+
+	<!-- Search Engine Optimization -->
+	
+
+	<link type="text/plain" rel="author" href="http://localhost:4000//humans.txt" />
+
+	
+
+	
+</head>
+</head>
+<body id="top-of-page" class="post">
+	
+	
+<div id="navigation" class="sticky">
+  <nav class="top-bar" role="navigation" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+      <h1 class="show-for-small-only"><a href="http://localhost:4000/" class="icon-tree"> </a></h1>
+    </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+    </ul>
+    <section class="top-bar-section">
+
+      <ul class="right">
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+            
+            
+              <li class="divider"></li>
+              <li><a href="http://localhost:4000//search/">Search</a></li>
+
+            
+            
+          
+        
+
+              
+
+          
+          
+            
+            
+              <li class="divider"></li>
+              <li><a href="http://localhost:4000//contact/">Contact</a></li>
+
+            
+            
+          
+        
+        
+      </ul>
+
+      <ul class="left">
+        
+
+              
+
+          
+          
+
+            
+            
+              <li><a href="http://localhost:4000//">Home</a></li>
+              <li class="divider"></li>
+
+            
+            
+          
+        
+
+              
+
+          
+          
+
+            
+            
+
+              <li class="has-dropdown">
+                <a href="http://localhost:4000//blog/">Blog</a>
+
+                  <ul class="dropdown">
+                    
+
+                      
+
+                      <li><a href="http://localhost:4000//animation/">Animation</a></li>
+                    
+
+                      
+
+                      <li><a href="http://localhost:4000//general/">General</a></li>
+                    
+
+                      
+
+                      <li><a href="http://localhost:4000//music/">Music</a></li>
+                    
+
+                      
+
+                      <li><a href="http://localhost:4000//python/">Python &amp; science</a></li>
+                    
+
+                      
+
+                      <li><a href="http://localhost:4000//powerfulpictures/">Powerful Pictures</a></li>
+                    
+
+                      
+
+                      <li><a href="http://localhost:4000//blog/archive/">Blog Archive</a></li>
+                    
+                  </ul>
+                  
+              </li>
+              <li class="divider"></li>
+            
+          
+        
+
+              
+
+          
+          
+
+            
+            
+              <li><a href="http://localhost:4000//photos/">Photos</a></li>
+              <li class="divider"></li>
+
+            
+            
+          
+        
+
+              
+
+          
+          
+
+            
+            
+              <li><a href="http://localhost:4000//resume/">Resume</a></li>
+              <li class="divider"></li>
+
+            
+            
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+        
+      </ul>
+    </section>
+  </nav>
+</div><!-- /#navigation -->
+
+	
+
+	
+
+<div id="masthead">
+	<div class="row">
+		<div class="small-12 columns">
+			<a id="logo" href="http://localhost:4000/" title=" – ">
+				<img src="http://localhost:4000//assets/img/" alt=" – ">
+			</a>
+		</div><!-- /.small-12.columns -->
+	</div><!-- /.row -->
+</div><!-- /#masthead -->
+
+
+
+
+<nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
+ <a href="http://localhost:4000/">Start</a>
+ 
+   
+    
+        <a href="http://localhost:4000//python/">python</a>
+    
+  
+    
+        <a class="current">Python data analysis & visualisation</a>
+    
+  
+</nav>
+
+
+
+
+<div class="masthead-caption">
+	Crosscombe, Cornwall, UK
+</div>
+
+
+
+
+
+
+
+
+	<div class="row t30">
+	<div class="medium-8 columns medium-offset-2 end">
+		<article itemscope itemtype="http://schema.org/Article">
+			<header>
+				
+
+				<span itemprop="name">
+					<p class="subheadline">Or do stats using python</p>
+					<h1>Python data analysis & visualisation</h1>
+				</span>
+			</header>
+
+
+			
+
+			<span itemprop="articleSection">
+			<p>Recently I had to do some data-analysis and visualisation for multi-factorial data. Importantly, the question was about the weight (/significance) of one of the factors, taking into account i) the within- and between-subjects variance, ii) the multiple-comparisons problem (i.e., multiple related measures within one subject), and missing data (i.e. not all condition measured in all subjects). This short overview shows some of the ways to properly (?) address each of these issues and also shortly touching on the obsession with p-values (p &lt; 0.05 is more important than the effect size).</p>
+
+<p>The key here is using a clever way to organise your data and using some kind of statistical model to assess how much variance is explained for each of the factors and comparing this to some residual variance, in turn assessing whether the factors explain significantly more variance the some unexplained variance.</p>
+
+<p>First, acquire the data. In my experience, the best way to organise the data is by using rows for measures and columns for factor. For example, I have a data-set with multiple subjects (sub_ids), stimulus conditions (e.g. sound intensity for two different kinds of stimuli), ears (l/r). For each of the measurements I have an amplitude and latency (I’m talking about an ABR study using either Click-stimuli or Chirps). This is all saved in a plain-text file (see next block):</p>
+
+<figure class="highlight"><pre><code class="language-tcl" data-lang="tcl">sub_id<span class="p">;</span>intensity<span class="p">;</span>initials<span class="p">;</span>ear<span class="p">;</span>stimulus_type<span class="p">;</span>latency<span class="p">;</span>amplitude
 1<span class="p">;</span>80<span class="p">;</span>JM<span class="p">;</span>Rechts<span class="p">;</span>Chirp<span class="p">;</span>5.77<span class="p">;</span>620
 1<span class="p">;</span>80<span class="p">;</span>JM<span class="p">;</span>Rechts<span class="p">;</span>Clicks<span class="p">;</span>5.57<span class="p">;</span>450
 1<span class="p">;</span>80<span class="p">;</span>JM<span class="p">;</span>Links<span class="p">;</span>Chirp<span class="p">;</span>5.57<span class="p">;</span>725
@@ -8,7 +386,11 @@
 1<span class="p">;</span>60<span class="p">;</span>JM<span class="p">;</span>Links<span class="p">;</span>Chirp<span class="p">;</span>6.20<span class="p">;</span>725
 1<span class="p">;</span>60<span class="p">;</span>JM<span class="p">;</span>Links<span class="p">;</span>Clicks<span class="p">;</span>6.17<span class="p">;</span>430
 1<span class="p">;</span>50<span class="p">;</span>JM<span class="p">;</span>Rechts<span class="p">;</span>Clicks<span class="p">;</span>6.43<span class="p">;</span>225
-...</code></pre></figure> <p>Now we get to the actual python framework. For this we use <a href="http://pandas.pydata.org/">Panda’s</a> to get, select and group the data according to our needs. The beauty of Panda’s is that it is really geared towards this purpose. First of all, import all packages (including statsmodel, pandas and seaborn - I’ll get to those later)</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+...</code></pre></figure>
+
+<p>Now we get to the actual python framework. For this we use <a href="http://pandas.pydata.org/">Panda’s</a> to get, select and group the data according to our needs. The beauty of Panda’s is that it is really geared towards this purpose. First of all, import all packages (including statsmodel, pandas and seaborn - I’ll get to those later)</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">os.path</span> <span class="kn">as</span> <span class="nn">op</span>
 <span class="kn">import</span> <span class="nn">glob</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
@@ -20,23 +402,45 @@
 <span class="c">#load the data</span>
 <span class="n">resdir</span> <span class="o">=</span> <span class="s">'/Users/cplanting/ABR-vis/'</span>
 <span class="n">data_bera</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">resdir</span><span class="p">,</span><span class="s">'amp.csv'</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s">';'</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">data_bera</span><span class="o">.</span><span class="n">head</span><span class="p">()</span></code></pre></figure> <div class="highlighter-rouge"><pre class="highlight"><code>   sub_id  intensity initials     ear stimulus_type  latency  amplitude
+<span class="k">print</span> <span class="n">data_bera</span><span class="o">.</span><span class="n">head</span><span class="p">()</span></code></pre></figure>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>   sub_id  intensity initials     ear stimulus_type  latency  amplitude
 0       1         80       JM  Rechts         Chirp     5.77        620
 1       1         80       JM  Rechts        Clicks     5.57        450
 2       1         80       JM   Links         Chirp     5.57        725
 3       1         80       JM   Links        Clicks     5.73        500
 4       1         70       JM  Rechts        Clicks     5.93        475
-</code></pre></div> <p>Since the data also contains 5 dB-step sizes (i.e. 45 dB, not shown), let’s bin the data by rounding to the next multiple of 10. Rather than overwriting existing data, I just add a new column.</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">int_round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">mult</span><span class="p">):</span>
+</code></pre>
+</div>
+
+<p>Since the data also contains 5 dB-step sizes (i.e. 45 dB, not shown), let’s bin the data by rounding to the next multiple of 10. Rather than overwriting existing data, I just add a new column.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">int_round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">mult</span><span class="p">):</span>
     <span class="c">#round to closest multiple of 10; 5.0 -&gt; 0.0; 5.1 -&gt; 10.0</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">mult</span><span class="p">)</span> <span class="o">*</span> <span class="n">mult</span>
  
 <span class="n">data_bera</span><span class="p">[</span><span class="s">'intensity (dB SPL)'</span><span class="p">]</span> <span class="o">=</span> <span class="n">int_round</span><span class="p">(</span><span class="n">data_bera</span><span class="p">[</span><span class="s">'intensity'</span><span class="p">],</span><span class="mf">10.0</span><span class="p">)</span>
-<span class="n">tmp</span> <span class="o">=</span> <span class="n">data_bera</span><span class="p">[</span><span class="n">data_bera</span><span class="o">.</span><span class="n">intensity</span> <span class="o">&lt;=</span> <span class="mi">85</span><span class="p">]</span></code></pre></figure> <p>The next step is visualising the data. A neat package that I use is <a href="http://stanford.edu/~mwaskom/software/seaborn/">Seaborn</a>, a Python visualization library based on matplotlib. It provides a high-level interface for drawing attractive statistical graphics. And it really does. For this data-set I want a factorplot with on the x-axis the intensity on the y-axis the amplitude and a bar for each of the two stimuli-types separately. Also, I’d like to have some idea of the confidence interval, taken as the 68 percentile based on 5000 bootstraps (i.e. the mean ± standard deviation; see e.g. <a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule">the 68-95-99.7 rule</a>). This is done by simply invoking the following:</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">g0</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">factorplot</span><span class="p">(</span><span class="s">"intensity (dB SPL)"</span><span class="p">,</span><span class="s">"amplitude"</span><span class="p">,</span><span class="s">"stimulus_type"</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s">"auto"</span><span class="p">,</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">data_bera</span><span class="p">[</span><span class="n">data_bera</span><span class="o">.</span><span class="n">intensity</span> <span class="o">&lt;=</span> <span class="mi">85</span><span class="p">]</span></code></pre></figure>
+
+<p>The next step is visualising the data. A neat package that I use is <a href="http://stanford.edu/~mwaskom/software/seaborn/">Seaborn</a>, a Python visualization library based on matplotlib. It provides a high-level interface for drawing attractive statistical graphics. And it really does. For this data-set I want a factorplot with on the x-axis the intensity on the y-axis the amplitude and a bar for each of the two stimuli-types separately. Also, I’d like to have some idea of the confidence interval, taken as the 68 percentile based on 5000 bootstraps (i.e. the mean ± standard deviation; see e.g. <a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule">the 68-95-99.7 rule</a>). This is done by simply invoking the following:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">g0</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">factorplot</span><span class="p">(</span><span class="s">"intensity (dB SPL)"</span><span class="p">,</span><span class="s">"amplitude"</span><span class="p">,</span><span class="s">"stimulus_type"</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s">"auto"</span><span class="p">,</span>
                      <span class="n">ci</span><span class="o">=</span><span class="mi">68</span><span class="p">,</span><span class="n">n_boot</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> 
-                     <span class="n">data</span><span class="o">=</span><span class="n">tmp</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s">"muted"</span><span class="p">)</span></code></pre></figure> <p><img src="https://crisly.github.io/notebooks/stats_bera_files/stats_bera_0_1.png" alt="png" /></p> <p>This already give me a strong indication that there is a strong effect of stimulus-type, and sound-intensity. To further explore this, I’m going to model the data based using two approaches. One is the plain-old ANOVA with two factors (stimulus-type &amp; intensity) and their interaction. This brushes over the glaring point of repeated measures but demonstrates ‘how-to’ do this kind of analysis (whether rightly or wrongly). The other approach is by using a <a href="https://en.wikipedia.org/wiki/Generalized_linear_mixed_model">generalized linear mixed model</a>. This GLMM approach models each response (/variable) as a combination of a random effect (e.g., the overall mean performance of a subject) and a fixed effect (e.g., the effect of a perturbation you induced, such a intensity level or condition). Especially when measuring several things within each subject, this mixed-model approach is really the way to go. Moreover, it is more geared towards the missing-data issue that ANOVA really cannot deal.</p> <p>First let’s check the <strong>ANOVA model</strong>:</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">model_anova</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="s">'amplitude ~ stimulus_type*intensity'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">tmp</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+                     <span class="n">data</span><span class="o">=</span><span class="n">tmp</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s">"muted"</span><span class="p">)</span></code></pre></figure>
+
+<p><img src="https://crisly.github.io/notebooks/stats_bera_files/stats_bera_0_1.png" alt="png" /></p>
+
+<p>This already give me a strong indication that there is a strong effect of stimulus-type, and sound-intensity. To further explore this, I’m going to model the data based using two approaches. One is the plain-old ANOVA with two factors (stimulus-type &amp; intensity) and their interaction. This brushes over the glaring point of repeated measures but demonstrates ‘how-to’ do this kind of analysis (whether rightly or wrongly). The other approach is by using a <a href="https://en.wikipedia.org/wiki/Generalized_linear_mixed_model">generalized linear mixed model</a>.
+This GLMM approach models each response (/variable) as a combination of a random effect (e.g., the overall mean performance of a subject) and a fixed effect (e.g., the effect of a perturbation you induced, such a intensity level or condition). Especially when measuring several things within each subject, this mixed-model approach is really the way to go. Moreover, it is more geared towards the missing-data issue that ANOVA really cannot deal.</p>
+
+<p>First let’s check the <strong>ANOVA model</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">model_anova</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="s">'amplitude ~ stimulus_type*intensity'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">tmp</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="n">table</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">anova_lm</span><span class="p">(</span><span class="n">model_anova</span><span class="p">,</span> <span class="n">typ</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c"># Type 2 ANOVA DataFrame</span>
 <span class="k">print</span> <span class="n">model_anova</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
-<span class="k">print</span> <span class="n">table</span></code></pre></figure> <div class="highlighter-rouge"><pre class="highlight"><code>                            OLS Regression Results                            
+<span class="k">print</span> <span class="n">table</span></code></pre></figure>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>                            OLS Regression Results                            
 ==============================================================================
 Dep. Variable:              amplitude   R-squared:                       0.312
 Model:                            OLS   Adj. R-squared:                  0.305
@@ -68,9 +472,16 @@ stimulus_type             1927226.558883    1  43.434354  2.094849e-10
 intensity                 4349489.911650    1  98.025468  4.505229e-20
 stimulus_type:intensity    114352.377676    1   2.577186  1.095140e-01
 Residual                 12734482.515712  287        NaN           NaN
-</code></pre></div> <p>Part of the variance is explained and the model fits the data well. Both the Intercept and the intensity explain a significant part of the variance. When looking at the stimulus type, however, it does not seem to explain a lot… Looking at the factorplot seems to suggest differently. I think* that it has to do with the large intersubject variance; probably to a larger degree than the within-subject variance. And here comes the <strong>mixed-model approach</strong>. This is done by defining a mixed model with two main factors and their interaction (note that the main effects are automatically added to the model when defining the interaction) and allowing for a random intercept for each subject (groups=tmp[“sub_id”]). This approach is very short in python code as can be seen here:</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">MixedLM</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="s">"amplitude ~ intensity * stimulus_type"</span><span class="p">,</span> <span class="n">tmp</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="n">tmp</span><span class="p">[</span><span class="s">"sub_id"</span><span class="p">])</span>
+</code></pre>
+</div>
+
+<p>Part of the variance is explained and the model fits the data well. Both the Intercept and the intensity explain a significant part of the variance. When looking at the stimulus type, however, it does not seem to explain a lot… Looking at the factorplot seems to suggest differently. I think* that it has to do with the large intersubject variance; probably to a larger degree than the within-subject variance. And here comes the <strong>mixed-model approach</strong>. This is done by defining a mixed model with two main factors and their interaction (note that the main effects are automatically added to the model when defining the interaction) and allowing for a random intercept for each subject (groups=tmp[“sub_id”]). This approach is very short in python code as can be seen here:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">MixedLM</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="s">"amplitude ~ intensity * stimulus_type"</span><span class="p">,</span> <span class="n">tmp</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="n">tmp</span><span class="p">[</span><span class="s">"sub_id"</span><span class="p">])</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="k">print</span> <span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span></code></pre></figure> <div class="highlighter-rouge"><pre class="highlight"><code>                       Mixed Linear Model Regression Results
+<span class="k">print</span> <span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span></code></pre></figure>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>                       Mixed Linear Model Regression Results
 ==================================================================================
 Model:                      MixedLM         Dependent Variable:         amplitude 
 No. Observations:           291             Method:                     REML      
@@ -87,4 +498,186 @@ intensity                             8.538    0.471 18.112 0.000    7.614   9.4
 intensity:stimulus_type[T.Clicks]    -1.245    0.683 -1.824 0.068   -2.584   0.093
 Intercept RE                      36195.683  117.297                              
 ==================================================================================
-</code></pre></div> <p>By using a random intercept, the factor stimulus_type also pops up as significant. Note that this approach is very comparable to the LME4 package in R as can be see in the <a href="http://statsmodels.sourceforge.net/stable/examples/notebooks/generated/mixed_lm_example.html">examples</a>.</p> </span> <div id="page-meta" class="t30"> <p> <!-- Look the author details up from the site config. --> <!-- Output author details if some exist. --> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name" class="pr20 icon-edit"><a href="https://crisly.github.io" target="_blank"> Cris Lanting</a></span> </span> <time class="icon-calendar pr20" datetime="2015-08-19" itemprop="datePublished"> 2015-08-19</time> <span class="icon-archive pr20"> PYTHON</span> <br> <span class="pr20"><span class="icon-price-tag pr10"> python</span> <span class="icon-price-tag pr10"> statsmodels</span> <span class="icon-price-tag pr10"> linear mixed-models</span> </span> </p> <div id="post-nav" class="row"> <div class="small-5 columns"><a class="button small radius prev" href="https://crisly.github.io/animation/onebrightdot/">&laquo; One Bright Dot</a></div><!-- /.small-4.columns --> <div class="small-2 columns text-center"><a class="radius button small" href="https://crisly.github.io/blog/archive/" title="Blog Archive">Archive</a></div><!-- /.small-4.columns --> <div class="small-5 columns text-right"><a class="button small radius next" href="https://crisly.github.io/animation/choros/">Choros &raquo;</a></div><!-- /.small-4.columns --> </div> </div><!-- /.page-meta --> </article> </div><!-- /.medium-8.columns --> </div><!-- /.row --> <div id="up-to-top" class="row"> <div class="small-12 columns" style="text-align: right;"> <a class="iconfont" href="#top-of-page">&#xf108;</a> </div><!-- /.small-12.columns --> </div><!-- /.row --> <footer id="footer-content" class="bg-grau"> <div id="footer"> <div class="row"> <div class="medium-6 large-5 columns"> <h5 class="shadow-black">About This Site</h5> <p class="shadow-black"> »Crisly's antics« is my personal webspace. About neuroscience, tinnitus, photos and more. <a href="https://crisly.github.io/about/">More ›</a> </p> </div><!-- /.large-6.columns --> <div class="small-6 medium-3 large-3 large-offset-1 columns"> <h5 class="shadow-black">Various things</h5> <ul class="no-bullet shadow-black"> <li > <a href="https://crisly.github.io" title=""></a> </li> <li class="services-contact" > <a href="https://crisly.github.io/contact/" title="Contact">Contact</a> </li> <li class="rss-link" > <a href="https://crisly.github.io/feed.xml" title="Subscribe to RSS">RSS</a> </li> <li class="sitemap-link" > <a href="https://crisly.github.io/sitemap.xml" title="Sitemap for Google Webmastertools">sitemap.xml</a> </li> </ul> </div><!-- /.large-4.columns --> <div class="small-6 medium-3 large-3 columns"> <ul class="no-bullet shadow-black"> </ul> </div><!-- /.large-3.columns --> </div><!-- /.row --> </div><!-- /#footer --> <div id="subfooter"> <nav class="row"> <section id="subfooter-left" class="b30 small-12 medium-6 columns"> <ul class="inline-list"> <li>crisly.github.io is made with <a style="display:inline;" href="http://jekyllrb.com/" target="_blank">Jekyll</a> using <a style="display:inline;" href="http://phlow.github.io/feeling-responsive/">Feeling Responsive</a></li> </ul> </section> <section id="subfooter-right" class="small-12 medium-6 columns social-icons"> <ul class="inline-list"> <li><a href="https://twitter.com/crisly" target="_blank" class="icon-twitter" title="Random tweets and birdlike noises"></a></li> <li><a href="https://www.flickr.com/photos/crisly" target="_blank" class="icon-camera" title="Pics, photo's, images... you get the gist"></a></li> <li><a href="http://www.facebook.com/crisly" target="_blank" class="icon-facebook" title="Facebook - because we might be connected trough less than 6 degrees"></a></li> <li><a href="https://www.pinterest.com/crislanting/" target="_blank" class="icon-pinterest" title="Assorted links to photo's, art and stuff"></a></li> <li><a href="https://www.linkedin.com/profile/view?id=19761002" target="_blank" class="icon-linkedin" title="To link or not to link"></a></li> <li><a href="http://github.com/Crisly/" target="_blank" class="icon-github" title="Code and more..."></a></li> </ul> </section> </nav> </div><!-- /#subfooter --> </footer> <script src="https://crisly.github.io/assets/js/javascript.min.js"></script> <script> $("#masthead").backstretch("https://crisly.github.io/images/cornwall.jpg", {fade: 700}); $("#masthead-with-text").backstretch("https://crisly.github.io/images/cornwall.jpg", {fade: 700}); </script> <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-66208950-1', 'auto'); ga('set', 'anonymizeIp', true); ga('send', 'pageview'); </script> </body> </html>
+</code></pre>
+</div>
+
+<p>By using a random intercept, the factor stimulus_type also pops up as significant. Note that this approach is very comparable to the LME4 package in R as can be see in the <a href="http://statsmodels.sourceforge.net/stable/examples/notebooks/generated/mixed_lm_example.html">examples</a>.</p>
+
+
+			</span>
+
+			
+						<div id="page-meta" class="t30">
+				<p>
+					<!-- Look the author details up from the site config. -->
+					
+					<!-- Output author details if some exist. -->
+					
+
+				
+				<time class="icon-calendar pr20" datetime="2015-08-19" itemprop="datePublished"> 2015-08-19</time>
+				
+
+				<span class="icon-archive pr20"> PYTHON</span>
+				<br />
+				<span class="pr20"><span class="icon-price-tag pr10"> python</span> <span class="icon-price-tag pr10"> statsmodels</span> <span class="icon-price-tag pr10"> linear mixed-models</span> </span>
+			</p>
+
+			<div id="post-nav" class="row">
+				
+				<div class="small-5 columns"><a class="button small radius prev" href="http://localhost:4000//animation/onebrightdot/">&laquo; One Bright Dot</a></div><!-- /.small-4.columns -->
+				
+				<div class="small-2 columns text-center"><a class="radius button small" href="http://localhost:4000//blog/archive/" title="Blog Archive">Archive</a></div><!-- /.small-4.columns -->
+				
+				<div class="small-5 columns text-right"><a class="button small radius next" href="http://localhost:4000//animation/choros/">Choros &raquo;</a></div><!-- /.small-4.columns -->
+				
+			</div>
+			</div><!--  /.page-meta -->
+			
+
+			
+		</article>
+	</div><!-- /.medium-8.columns -->
+
+
+	
+
+
+	
+</div><!-- /.row -->
+
+
+	
+	    <div id="up-to-top" class="row">
+      <div class="small-12 columns" style="text-align: right;">
+        <a class="iconfont" href="#top-of-page">&#xf108;</a>
+      </div><!-- /.small-12.columns -->
+    </div><!-- /.row -->
+
+
+    <footer id="footer-content" class="bg-grau">
+      <div id="footer">
+        <div class="row">
+          <div class="medium-6 large-5 columns">
+            <h5 class="shadow-black">About This Site</h5>
+
+            <p class="shadow-black">
+              »Crisly's antics« is my personal webspace. About neuroscience, tinnitus,  photos and more.
+              <a href="http://localhost:4000//about/">More ›</a>
+            </p>
+          </div><!-- /.large-6.columns -->
+
+
+          <div class="small-6 medium-3 large-3 large-offset-1 columns">
+            
+              
+                <h5 class="shadow-black">Various things</h5>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <ul class="no-bullet shadow-black">
+              
+                
+                  <li >
+                    <a href=""  title=""></a>
+                  </li>
+              
+                
+                  <li class="services-contact" >
+                    <a href="/contact/"  title="Contact">Contact</a>
+                  </li>
+              
+                
+                  <li class="rss-link" >
+                    <a href="/feed.xml"  title="Subscribe to RSS">RSS</a>
+                  </li>
+              
+                
+                  <li class="sitemap-link" >
+                    <a href="/sitemap.xml"  title="Sitemap for Google Webmastertools">sitemap.xml</a>
+                  </li>
+              
+              </ul>
+          </div><!-- /.large-4.columns -->
+
+
+
+
+      </div><!-- /#footer -->
+
+
+      <div id="subfooter">
+        <nav class="row">
+          <section id="subfooter-left" class="b30 small-12 medium-6 columns credits">
+            <p> <a style="display:inline;"
+            href="https://www.crisly.nl" target="_blank">crisly.nl</a> is made with <a style="display:inline;"
+            href="http://jekyllrb.com/" target="_blank">Jekyll</a> using <a style="display:inline;" href="http://phlow.github.io/feeling-responsive/">Feeling Responsive</a></p>
+          </section>
+
+          <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+            <ul class="inline-list">
+            
+              <li><a href="https://twitter.com/crisly" target="_blank" class="icon-twitter" title="Random tweets and birdlike noises"></a></li>
+            
+              <li><a href="https://www.flickr.com/photos/crisly" target="_blank" class="icon-camera" title="Pics, photo's, images... you get the gist"></a></li>
+            
+              <li><a href="http://www.facebook.com/crisly" target="_blank" class="icon-facebook" title="Facebook - because we might be connected trough less than 6 degrees"></a></li>
+            
+              <li><a href="https://www.pinterest.com/crislanting/" target="_blank" class="icon-pinterest" title="Assorted links to photo's, art and stuff"></a></li>
+            
+              <li><a href="https://www.linkedin.com/profile/view?id=19761002" target="_blank" class="icon-linkedin" title="To link or not to link"></a></li>
+            
+              <li><a href="http://github.com/Crisly/" target="_blank" class="icon-github" title="Code and more..."></a></li>
+            
+            </ul>
+          </section>
+        </nav>
+      </div><!-- /#subfooter -->
+    </footer>
+
+	
+
+	
+
+
+<script src="http://localhost:4000//assets/js/javascript.min.js"></script>
+
+
+
+<script>
+    $("#masthead").backstretch("http://localhost:4000/images/cornwall.jpg", {fade: 700});
+    $("#masthead-with-text").backstretch("http://localhost:4000/images/cornwall.jpg", {fade: 700});
+</script>
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-15362078-1', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
+

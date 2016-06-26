@@ -1,37 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/assets/xslt/rss.xslt" ?>
+<?xml-stylesheet type="text/css" href="/assets/css/rss.css" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title></title>
-    <description>»Crisly&#39;s antics« is my personal webspace. About neuroscience, tinnitus,  photos and more.</description>
-    <link>https://crisly.github.io/</link>
-    <atom:link href="https://crisly.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    
-      <item>
-        <title>Nils Frahm</title>
-        <description>&lt;p&gt;One of the best contemporary musician, composer, and producer. Just have a look at his concert at the edge of classical and electronica.&lt;/p&gt;
+	<channel>
+		<title></title>
+		<description>»Crisly&#39;s antics« is my personal webspace. About neuroscience, tinnitus,  photos and more.</description>
+		<link>http://localhost:4000//</link>
+		<atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>The Newyorker on brexit</title>
+				<link>http://localhost:4000//powerfulpictures/brexit/</link>
+				<pubDate>Sat, 25 Jun 2016 00:00:00 +0200</pubDate>
+				<description>&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/brexit.png&quot; alt=&quot;newyorker take on brexit&quot; title=&quot;newyorker take on brexit&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;source: &lt;img src=&quot;http://localhost:4000/images/ext_link.png&quot; alt=&quot;ext.link&quot; title=&quot;ext.link&quot; /&gt; &lt;a href=&quot;http://www.newyorker.com/culture/culture-desk/cover-story-2016-07-04&quot;&gt;http://www.newyorker.com/culture/culture-desk/cover-story-2016-07-04&lt;/a&gt;&lt;/p&gt;
+</description>
+				<guid isPermaLink="true">http://localhost:4000//powerfulpictures/brexit/</guid>
+			</item>
+		
+			<item>
+				<title>Ellis</title>
+				<link>http://localhost:4000//animation/Ellis/</link>
+				<pubDate>Sat, 18 Jun 2016 00:00:00 +0200</pubDate>
+				<description>&lt;iframe src=&quot;https://player.vimeo.com/video/140332198?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;600&quot; height=&quot;338&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+				<guid isPermaLink="true">http://localhost:4000//animation/Ellis/</guid>
+			</item>
+		
+			<item>
+				<title>Oma</title>
+				<link>http://localhost:4000//animation/oma/</link>
+				<pubDate>Wed, 11 May 2016 00:00:00 +0200</pubDate>
+				<description>&lt;iframe src=&quot;https://player.vimeo.com/video/164076380?color=c9ff23&amp;amp;title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;600&quot; height=&quot;338&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+				<guid isPermaLink="true">http://localhost:4000//animation/oma/</guid>
+			</item>
+		
+			<item>
+				<title>Nils Frahm</title>
+				<link>http://localhost:4000//music/frahm-live/</link>
+				<pubDate>Thu, 22 Oct 2015 00:00:00 +0200</pubDate>
+				<description>&lt;p&gt;One of the best contemporary musician, composer, and producer. Just have a look at his concert at the edge of classical and electronica.&lt;/p&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/xih8aiacRSk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 </description>
-        <pubDate>Thu, 22 Oct 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/music/frahm-live/</link>
-        <guid isPermaLink="true">https://crisly.github.io/music/frahm-live/</guid>
-      </item>
-    
-      <item>
-        <title>Choros</title>
-        <description>&lt;p&gt;A mesmerizing hypnotic, pulsating exploration of movement in dance by &lt;a href=&quot;http://langanfilms.com/index.html&quot;&gt;Michael Langan&lt;/a&gt;. A breathtaking visualisation of sliced image footage with the hypnotic beating of Steve Reich’s &lt;a href=&quot;https://www.youtube.com/watch?v=ZXJWO2FQ16c&quot;&gt;Music for 18 Musicians&lt;/a&gt;.&lt;/p&gt;
+				<guid isPermaLink="true">http://localhost:4000//music/frahm-live/</guid>
+			</item>
+		
+			<item>
+				<title>Choros</title>
+				<link>http://localhost:4000//animation/choros/</link>
+				<pubDate>Sun, 30 Aug 2015 00:00:00 +0200</pubDate>
+				<description>&lt;p&gt;A mesmerizing hypnotic, pulsating exploration of movement in dance by &lt;a href=&quot;http://langanfilms.com/index.html&quot;&gt;Michael Langan&lt;/a&gt;. A breathtaking visualisation of sliced image footage with the hypnotic beating of Steve Reich’s &lt;a href=&quot;https://www.youtube.com/watch?v=ZXJWO2FQ16c&quot;&gt;Music for 18 Musicians&lt;/a&gt;.&lt;/p&gt;
 
 &lt;iframe src=&quot;https://player.vimeo.com/video/35770492?color=ffffff&amp;amp;title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;600&quot; height=&quot;338&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;a href=&quot;https://vimeo.com/35770492&quot;&gt;Choros&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/langanfilms&quot;&gt;Michael Langan&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
 </description>
-        <pubDate>Sun, 30 Aug 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/animation/choros/</link>
-        <guid isPermaLink="true">https://crisly.github.io/animation/choros/</guid>
-      </item>
-    
-      <item>
-        <title>Python data analysis &amp; visualisation</title>
-        <description>&lt;p&gt;Recently I had to do some data-analysis en visualisation for multi-factorial data. Importantly, the question was about the weight (/significance) of one of the factors, taking into account i) the within- and between-subjects variance, ii) the multiple-comparisons problem (i.e., multiple related measures within one subject), and missing data (i.e. not all condition measured in all subjects). This short overview shows some of the ways to properly (?) address each of these issues and also shortly touching on the obsession with p-values (p &amp;lt; 0.05 is more important than the effect size).&lt;/p&gt;
+				<guid isPermaLink="true">http://localhost:4000//animation/choros/</guid>
+			</item>
+		
+			<item>
+				<title>Python data analysis &amp; visualisation</title>
+				<link>http://localhost:4000//python/python_data_analysis_and_visualisation/</link>
+				<pubDate>Wed, 19 Aug 2015 00:00:00 +0200</pubDate>
+				<description>&lt;p&gt;Recently I had to do some data-analysis and visualisation for multi-factorial data. Importantly, the question was about the weight (/significance) of one of the factors, taking into account i) the within- and between-subjects variance, ii) the multiple-comparisons problem (i.e., multiple related measures within one subject), and missing data (i.e. not all condition measured in all subjects). This short overview shows some of the ways to properly (?) address each of these issues and also shortly touching on the obsession with p-values (p &amp;lt; 0.05 is more important than the effect size).&lt;/p&gt;
 
 &lt;p&gt;The key here is using a clever way to organise your data and using some kind of statistical model to assess how much variance is explained for each of the factors and comparing this to some residual variance, in turn assessing whether the factors explain significantly more variance the some unexplained variance.&lt;/p&gt;
 
@@ -165,24 +198,24 @@ Intercept RE                      36195.683  117.297
 &lt;p&gt;By using a random intercept, the factor stimulus_type also pops up as significant. Note that this approach is very comparable to the LME4 package in R as can be see in the &lt;a href=&quot;http://statsmodels.sourceforge.net/stable/examples/notebooks/generated/mixed_lm_example.html&quot;&gt;examples&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 19 Aug 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/python/python_data_analysis_and_visualisation/</link>
-        <guid isPermaLink="true">https://crisly.github.io/python/python_data_analysis_and_visualisation/</guid>
-      </item>
-    
-      <item>
-        <title>One Bright Dot</title>
-        <description>&lt;p&gt;Not even 2 minutes long but a beatiful short animation “One Bright Dot”. Love the colors, the moodyness and the dreamyness…&lt;/p&gt;
+				<guid isPermaLink="true">http://localhost:4000//python/python_data_analysis_and_visualisation/</guid>
+			</item>
+		
+			<item>
+				<title>One Bright Dot</title>
+				<link>http://localhost:4000//animation/onebrightdot/</link>
+				<pubDate>Sun, 02 Aug 2015 00:00:00 +0200</pubDate>
+				<description>&lt;p&gt;Not even 2 minutes long but a beatiful short animation “One Bright Dot”. Love the colors, the moodyness and the dreamyness…&lt;/p&gt;
 &lt;iframe src=&quot;https://player.vimeo.com/video/124400795&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>Sun, 02 Aug 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/animation/onebrightdot/</link>
-        <guid isPermaLink="true">https://crisly.github.io/animation/onebrightdot/</guid>
-      </item>
-    
-      <item>
-        <title>The Strange Case of Dr. Jekyll and Mr. Hyde,</title>
-        <description>&lt;p&gt;A few weeks ago, I stumbled over Jekyll, a ruby implementation that is geared towards producing ‘responsive’ static websites. The idea of having plain-text posts, which in turn get rendered into nice, clean, fast HTML sites, is really appealing. Why? Have a look at a generic CMS such as WordPress or Joomla. It may have a nice interface allowing you to type posts, add some images and links and saving them online that make it sort-of easy-to-use. The back-end of these sites however is often database-driven (MySQL) and allows for more than any user (/web developer) might ever want and, perhaps more importantly, slowing it down. Too many options and difficult template-adjusting-tinkering-sessions as a consequence.&lt;/p&gt;
+				<guid isPermaLink="true">http://localhost:4000//animation/onebrightdot/</guid>
+			</item>
+		
+			<item>
+				<title>The Strange Case of Dr. Jekyll and Mr. Hyde,</title>
+				<link>http://localhost:4000//general/myfirstjekyll/</link>
+				<pubDate>Mon, 27 Jul 2015 00:00:00 +0200</pubDate>
+				<description>&lt;p&gt;A few weeks ago, I stumbled over Jekyll, a ruby implementation that is geared towards producing ‘responsive’ static websites. The idea of having plain-text posts, which in turn get rendered into nice, clean, fast HTML sites, is really appealing. Why? Have a look at a generic CMS such as WordPress or Joomla. It may have a nice interface allowing you to type posts, add some images and links and saving them online that make it sort-of easy-to-use. The back-end of these sites however is often database-driven (MySQL) and allows for more than any user (/web developer) might ever want and, perhaps more importantly, slowing it down. Too many options and difficult template-adjusting-tinkering-sessions as a consequence.&lt;/p&gt;
 
 &lt;p&gt;In my opinion, a website should be clean, concise, simple and mostly text-, image- or link-based. When I occasionally write a post, it’s about music, movies, photos or science (perhaps even sharing code). A resume is a must, as well as  a means of showcasing photo’s or projects. I don’t need a big forum, fb-likeable posts and other what-have-you-not’s. The cleaner, the better. Perhaps a good time to introduce Jekyll.&lt;/p&gt;
 
@@ -190,108 +223,30 @@ Intercept RE                      36195.683  117.297
 
 &lt;p&gt;This website is my first attempt to get a fresh new start.  Occasionally things may be broken but the steep-learning curve (in combination with excellent examples of themes, such as [https://phlow.github.io/feeling-responsive]) already got me here. Improvements will follow but until then, it seems like a good start. I like it anyway…&lt;/p&gt;
 
-&lt;h2 class=&quot;t60&quot; id=&quot;other-general-items&quot;&gt;Other ‘general’ items&lt;/h2&gt;
-
-&lt;ul class=&quot;side-nav&quot;&gt;
-
-  
-
-    
-
-  
-&lt;/ul&gt;
-
 </description>
-        <pubDate>Mon, 27 Jul 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/general/myfirstjekyll/</link>
-        <guid isPermaLink="true">https://crisly.github.io/general/myfirstjekyll/</guid>
-      </item>
-    
-      <item>
-        <title>Joy Division</title>
-        <description>&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/w2mKRjPHUNg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+				<guid isPermaLink="true">http://localhost:4000//general/myfirstjekyll/</guid>
+			</item>
+		
+			<item>
+				<title>Joy Division</title>
+				<link>http://localhost:4000//music/decades/</link>
+				<pubDate>Sat, 25 Jul 2015 00:00:00 +0200</pubDate>
+				<description>&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/w2mKRjPHUNg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>Sat, 25 Jul 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/music/decades/</link>
-        <guid isPermaLink="true">https://crisly.github.io/music/decades/</guid>
-      </item>
-    
-      <item>
-        <title>Death Cab for Cutie</title>
-        <description>&lt;iframe width=&quot;600&quot; height=&quot;338&quot; src=&quot;http://www.npr.org/templates/event/embeddedVideo.php?storyId=397696708&amp;amp;mediaId=397700321&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+				<guid isPermaLink="true">http://localhost:4000//music/decades/</guid>
+			</item>
+		
+			<item>
+				<title>Death Cab for Cutie</title>
+				<link>http://localhost:4000//music/black_sun/</link>
+				<pubDate>Thu, 23 Jul 2015 00:00:00 +0200</pubDate>
+				<description>&lt;iframe width=&quot;600&quot; height=&quot;338&quot; src=&quot;http://www.npr.org/templates/event/embeddedVideo.php?storyId=397696708&amp;amp;mediaId=397700321&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;A few haunting song by Death Cab for Cutie &lt;cite&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Death_Cab_for_Cutie&quot;&gt;Wikipedia&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 23 Jul 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/music/black_sun/</link>
-        <guid isPermaLink="true">https://crisly.github.io/music/black_sun/</guid>
-      </item>
-    
-      <item>
-        <title>A few notable concerts</title>
-        <description>&lt;p&gt;This year marks the NPR Tiny Desk Concerts &lt;a href=&quot;http://www.npr.org/blogs/allsongs/2015/02/12/385532517/all-songs-at-15-our-first-ever-tiny-desk-concert&quot;&gt;15th birthday&lt;/a&gt;. A desk transformed into a stage for the most intimate concerts you’ll ever witness (maybe a bit exaggerated, but you get the gist). Here’s a few I’ve been enjoying lately:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Death Cab for Cutie&lt;/strong&gt;
-Especially the first song, ‘Black Sun’ keeps haunting me.&lt;/p&gt;
-
-&lt;p&gt;“What Sarah Said” also features in a spotify-list with mainly sad song (which eventually might share).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Moon Hooch&lt;/strong&gt;
-Two screaming saxophones and one drummer that keeps the beat up. What can I say - just listen!&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tallest Man on Earth&lt;/strong&gt;
-With his raw voice not very unlike Bob Dylan his songs might also hit your ‘sad string’ although it’s happy-go-lucky at times.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The Swell Season&lt;/strong&gt;
-Following their musical love-story &lt;a href=&quot;http://en.wikipedia.org/wiki/Once_%28film%29&quot;&gt;“Once”&lt;/a&gt; a intimate desk concert by Glen Hansard and Marketa Irglova.&lt;/p&gt;
-
-&lt;p&gt;See the full list of concerts here (apparently over 400 of them!) 
-&lt;a href=&quot;http://www.npr.org/series/tiny-desk-concerts/&quot;&gt;http://www.npr.org/series/tiny-desk-concerts/&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 21 Apr 2015 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/music/tiny-desk-concerts/</link>
-        <guid isPermaLink="true">https://crisly.github.io/music/tiny-desk-concerts/</guid>
-      </item>
-    
-      <item>
-        <title>Python notebook - interactive science</title>
-        <description>&lt;p&gt;In a previous post I showed that python, in combination with some additions such as &lt;strong&gt;numpy&lt;/strong&gt; and &lt;strong&gt;matplotlib&lt;/strong&gt;, can be a considered a worthy replacement of Matlab. There are some tricks that make the transition even easier. One of those additions is the browser ‘notebook’, an interactive Python interface running in the browser. Even if for some reason you don’t fancy browser-based python, the technology allows for more than just that. One of those new features (v0.12) is the inline graphics mode that is quite similar to Mathematica’s approach. In order to get this running I’ll just copy the steps (as previously described &lt;a href=&quot;http://raj.blog.archive.org/2012/02/02/installing-ipython-notebook-to-replace-matlab/&quot;&gt;here&lt;/a&gt;):&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-tcl&quot; data-lang=&quot;tcl&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;sudo add-apt-repository ppa:chris-lea/zeromq
-sudo add-apt-repository ppa:chris-lea/libpgm
-sudo apt-get update
-sudo apt-get install libzmq1
-sudo apt-get install libzmq-dev
-sudo apt-get install libpgm-5.1-0
-sudo pip install pyzmq 
-sudo pip install tornado
-sudo pip install --upgrade ipython
-sudo pip install numpy
-sudo pip install matplotlib&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;That should get you the latest iPython. To get the inline graphics mode running, just type&lt;/p&gt;
-
-&lt;div class=&quot;alert-box terminal radius&quot;&gt;ipython qtconsole --pylab=inline&lt;/div&gt;
-
-&lt;p&gt;The same example as previously but now with the inline graphics mode:
-&lt;img src=&quot;https://crisly.github.io/docs/ipython_inline.png&quot; alt=&quot;ipython inline graphics&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 19 May 2012 00:00:00 +0200</pubDate>
-        <link>https://crisly.github.io/python/interactive-pythonnumpymatplotlib/</link>
-        <guid isPermaLink="true">https://crisly.github.io/python/interactive-pythonnumpymatplotlib/</guid>
-      </item>
-    
-  </channel>
+				<guid isPermaLink="true">http://localhost:4000//music/black_sun/</guid>
+			</item>
+		
+	</channel>
 </rss>
